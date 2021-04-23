@@ -1,0 +1,205 @@
+/*######################################################################
+//#	G0B1T: HDL EXAMPLES. 2018.
+//######################################################################
+//# Copyright (C) 2018. F.E.Segura-Quijano (FES) fsegura@uniandes.edu.co
+//# 
+//# This program is free software: you can redistribute it and/or modify
+//# it under the terms of the GNU General Public License as published by
+//# the Free Software Foundation, version 3 of the License.
+//#
+//# This program is distributed in the hope that it will be useful,
+//# but WITHOUT ANY WARRANTY; without even the implied warranty of
+//# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//# GNU General Public License for more details.
+//#
+//# You should have received a copy of the GNU General Public License
+//# along with this program.  If not, see <http://www.gnu.org/licenses/>
+//####################################################################*/
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+// constants                                           
+// ============================================
+// Parameter ( may differ for physical synthesis)
+// ============================================
+	// general purpose registers
+	reg eachvec;
+	parameter TCK = 20; // clock period in ns
+	parameter CLK_FREQ = 1000000000 / TCK; // Frequenzy in HZ
+	parameter DATAWIDTH_BUS = 8;
+	integer ii=0;
+	// test vector input registers
+// ============================================
+// INTERNAL WIRE AND REG DECLARATIONS
+// ============================================
+	// wires (OUTPUTS)
+	wire TB_SYSTEM_display_OutBUS;
+	wire TB_SYSTEM_max7219DIN_Out;
+	wire TB_SYSTEM_max7219NCS_Out;
+	wire TB_SYSTEM_max7219CLK_Out;
+
+	wire TB_SYSTEM_startButton_Out;
+	wire TB_SYSTEM_upButton_Out;
+	wire TB_SYSTEM_downButton_Out;
+	wire TB_SYSTEM_leftButton_Out;
+	wire TB_SYSTEM_rightButton_Out;
+	wire TB_SYSTEM_TEST0;
+	wire TB_SYSTEM_TEST1;
+	wire TB_SYSTEM_TEST2;
+
+	// reg (INPUTS)
+	reg TB_SYSTEM_CLOCK_50;
+	reg TB_SYSTEM_RESET_InHigh;
+	reg TB_SYSTEM_startButton_InLow; 
+	reg	TB_SYSTEM_upButton_InLow;
+	reg TB_SYSTEM_downButton_InLow;
+	reg TB_SYSTEM_leftButton_InLow;
+	reg TB_SYSTEM_rightButton_InLow;	
+	
+	reg[7:0] random1;
+	// assign statements (if any)                          
+	BB_SYSTEM BB_SYSTEM_u0 (
+	// port map - connection between master ports and signals/registers   
+		.BB_SYSTEM_display_OutBUS(TB_SYSTEM_display_OutBUS),
+		.BB_SYSTEM_max7219DIN_Out(TB_SYSTEM_max7219DIN_Out),
+		.BB_SYSTEM_max7219NCS_Out(TB_SYSTEM_max7219NCS_Out),
+		.BB_SYSTEM_max7219CLK_Out(TB_SYSTEM_max7219CLK_Out),
+		.BB_SYSTEM_startButton_Out(TB_SYSTEM_startButton_Out),
+		.BB_SYSTEM_upButton_Out(TB_SYSTEM_upButton_Out),
+		.BB_SYSTEM_downButton_Out(TB_SYSTEM_downButton_Out),
+		.BB_SYSTEM_leftButton_Out(TB_SYSTEM_leftButton_Out),
+		.BB_SYSTEM_rightButton_Out(TB_SYSTEM_rightButton_Out),
+		.BB_SYSTEM_TEST0(TB_SYSTEM_TEST0),
+		.BB_SYSTEM_TEST1(TB_SYSTEM_TEST1),
+		.BB_SYSTEM_TEST2(TB_SYSTEM_TEST2),
+		
+		.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+		.BB_SYSTEM_RESET_InHigh(TB_SYSTEM_RESET_InHigh),
+		.BB_SYSTEM_startButton_InLow(TB_SYSTEM_startButton_InLow),
+		.BB_SYSTEM_upButton_InLow(TB_SYSTEM_upButton_InLow),
+		.BB_SYSTEM_downButton_InLow(TB_SYSTEM_downButton_InLow),
+		.BB_SYSTEM_leftButton_InLow(TB_SYSTEM_leftButton_InLow),
+		.BB_SYSTEM_rightButton_InLow(TB_SYSTEM_rightButton_InLow)
+	);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+	TB_SYSTEM_CLOCK_50 <= 0;
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
+initial begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin     
+	random1 <= $random;
+	
+	//Una vez limpiado el sistema mediante la señal RESET, hacemos el debido porceso para iniciar el juego
+	#0 			TB_SYSTEM_RESET_InHigh <= 1'b1; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	//Se presiona la señal START, para iniciar todo el sistema apropiadamente
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+
+	// Una vez iniciado el sistema, probamos el movimiento de la rana en sus cuatro patrones de movimiento (UP, DOWN, LEFT y RIGHT)	
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//DOWN
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//LEFT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//RIGHT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	
+	// Se prueba estrellar la rana para evaluar la actualización de los registros, por lo que movemos la rana hacia un obstaculo
+	// Movemos dos veces hacia arriba la rana, luego la dejamos ahí para que un obstaculo colisione con ella
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//La dejamos quieta
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	
+	// La rana es atropellada, evaluamos si los registros, los estados y las animaciones correspondientes funcionan correctamente
+	// Una vez evaluado anterior, reestablecemos el sistema mediante RESET y START
+	// Se pulsa RESET
+	#10000000	TB_SYSTEM_RESET_InHigh <= 1'b1; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	// Se pulsa START
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// Probamos ahora llevar las dos ranas al nido, completando el nivel
+	// Movemos las ranas
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// RIGHT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//LEFT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// RIGHT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// La primera rana llega a un nido, evaluamos la actualización de los registros y la apararición de una nueva rana. También comprobamos que el LED del primer nido se mantenga encendido.
+	// Si lo anterior se corrobora, movemos ahora la segunda rana al segundo nido.
+	// Movemos la segunda rana
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// RIGHT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//LEFT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//LEFT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//LEFT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//LEFT
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// La segunda rana llega a su nido. Evaluamos si el sistema responde segun lo esperado.
+	// En caso satisfactorio, se mostraría una animación, se cambia a Nivel 2 y se actualizan todos los registros como corresponden.
+	
+	// Ahora comprobamos si el sistema responde adecuadamente cuando el usuario pierde
+	// Para esto, estrellamos las ranas 3 veces, para perder todas las vidas
+	// Chocamos las ranas
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// Se estrella la primera rana
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// Se estrella la segunda
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	//UP
+	#10000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b1; TB_SYSTEM_leftButton_InLow <= 1'b1; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	// Se estrella la tercera
+	// Una vez perdidas todas las vidas, esperamos que el sistema responda adecuadamente.
+	// Los registros deben actualizarse, el estado Nivel debe volver a 1 y el sistema debe esperar una señal RESET para limpiar el sistema 
+	// y volver a inicar.
+	
+	//#(TCK*10000) $finish;	
+@eachvec;
+$finish;                                              
+// --> end                                             
+end                                                    
+endmodule
+
