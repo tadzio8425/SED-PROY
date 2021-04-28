@@ -22,7 +22,11 @@ module CC_SPEEDCOMPARATOR #(parameter SPEEDCOMPARATOR_DATAWIDTH=23)(
 //////////// OUTPUTS //////////
 	CC_SPEEDCOMPARATOR_T0_OutLow,
 //////////// INPUTS //////////
-	CC_SPEEDCOMPARATOR_data_InBUS
+	CC_SPEEDCOMPARATOR_data_InBUS,
+
+	/////////// NIVEL ///////
+	CC_NIVEL_data_InBus
+	
 );
 //=======================================================
 //  PARAMETER declarations
@@ -33,6 +37,7 @@ module CC_SPEEDCOMPARATOR #(parameter SPEEDCOMPARATOR_DATAWIDTH=23)(
 //=======================================================
 output	reg CC_SPEEDCOMPARATOR_T0_OutLow;
 input 	[SPEEDCOMPARATOR_DATAWIDTH-1:0] CC_SPEEDCOMPARATOR_data_InBUS;
+input 	[2-1:0] CC_NIVEL_data_InBus;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -41,10 +46,22 @@ input 	[SPEEDCOMPARATOR_DATAWIDTH-1:0] CC_SPEEDCOMPARATOR_data_InBUS;
 //=======================================================
 always @(CC_SPEEDCOMPARATOR_data_InBUS)
 begin
-	if( CC_SPEEDCOMPARATOR_data_InBUS == 23'b11111111111111111111111)
+	if( CC_SPEEDCOMPARATOR_data_InBUS == 23'b11111111111111111111111 && CC_NIVEL_data_InBus == 2'b00)
 		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b0;
+		
+	else if( CC_SPEEDCOMPARATOR_data_InBUS == 23'b10000000000000000000000 && CC_NIVEL_data_InBus == 2'b01)
+		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b0;
+		
+	else if( CC_SPEEDCOMPARATOR_data_InBUS == 23'b01111100000000000000000 && CC_NIVEL_data_InBus == 2'b10)
+		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b0;
+		
+	else if( CC_SPEEDCOMPARATOR_data_InBUS == 23'b01000000000000000000000 && CC_NIVEL_data_InBus == 2'b11)
+		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b0;
+		
 	else 
 		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b1;
+	
+		
 end
 
 endmodule
