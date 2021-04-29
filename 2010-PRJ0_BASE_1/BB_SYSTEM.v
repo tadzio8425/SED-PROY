@@ -34,14 +34,17 @@ module BB_SYSTEM (
 	BB_SYSTEM_rightButton_Out,
 	BB_SYSTEM_upButton_Out,
 	BB_SYSTEM_downButton_Out,
+	
+	
 //////////// INPUTS //////////
+
 	BB_SYSTEM_CLOCK_50,
 	BB_SYSTEM_RESET_InHigh,
 	BB_SYSTEM_startButton_InLow, 
 	BB_SYSTEM_leftButton_InLow,
 	BB_SYSTEM_rightButton_InLow,
 	BB_SYSTEM_upButton_InLow,
-	BB_SYSTEM_downButton_InLow
+	BB_SYSTEM_downButton_InLow,
 );
 //=======================================================
 //  PARAMETER declarations
@@ -61,7 +64,7 @@ module BB_SYSTEM (
  
  
  // 
- parameter DATA_FIXED_INITREGNivel_0 = 2'00;
+ parameter DATA_FIXED_INITREGNivel_0 = 2'b00;
  
  
  //=======================================================
@@ -116,9 +119,6 @@ wire [DATAWIDTH_BUS-1:0] regGAME_data0_wire;
 
 // REG GENERAL CABLES
 wire [2-1:0] RegNivel_Out;
-
-
-
 wire 	[7:0] data_max;
 wire 	[2:0] add;
 
@@ -164,7 +164,7 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u4 (
 	.SC_DEBOUNCE1_button_Out(BB_SYSTEM_downButton_InLow_cwire),
 	.SC_DEBOUNCE1_CLOCK_50(BB_SYSTEM_CLOCK_50),
 	.SC_DEBOUNCE1_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
-	.SC_DEBOUNCE1_button_In(~BB_SYSTEM_downButton_InLow_cwire)
+	.SC_DEBOUNCE1_button_In(~BB_SYSTEM_downButton_InLow),
 );
 
 //######################################################################
@@ -177,6 +177,9 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u4 (
 //######################################################################
 
 // Regsitro de NIVEL
+
+
+
 SC_REG_GENERAL_NIVEL #(.REG_GENERAL_NIVEL_DATAWIDTH(2), .DATA_FIXED_INITREG(2'b00)) SC_REG_GENERAL_NIVEL_u0 (
 // port map - connection between master ports and signals/registers   
 	.SC_RegNIVEL_data_OutBUS(RegNivel_Out),
@@ -186,7 +189,7 @@ SC_REG_GENERAL_NIVEL #(.REG_GENERAL_NIVEL_DATAWIDTH(2), .DATA_FIXED_INITREG(2'b0
 	.SC_RegNIVEL_load_InLow(STATEMACHINEBACKG_load_cwire),
 	.SC_RegNIVEL_data_InBUS(DATA_FIXED_INITREGNivel_0)
 
-
+);
 
 //######################################################################
 //#                                SPEED 
@@ -203,6 +206,7 @@ SC_upSPEEDCOUNTER #(.upSPEEDCOUNTER_DATAWIDTH(PRESCALER_DATAWIDTH)) SC_upSPEEDCO
 CC_SPEEDCOMPARATOR #(.SPEEDCOMPARATOR_DATAWIDTH(PRESCALER_DATAWIDTH)) CC_SPEEDCOMPARATOR_u0 (
 	.CC_SPEEDCOMPARATOR_T0_OutLow(SPEEDCOMPARATOR_2_STATEMACHINEBACKG_T0_cwire),
 	.CC_SPEEDCOMPARATOR_data_InBUS(upSPEEDCOUNTER_data_BUS_wire)
+	
 );
 
 //////////     
@@ -214,6 +218,8 @@ CC_SPEEDCOMPARATOR #(.SPEEDCOMPARATOR_DATAWIDTH(PRESCALER_DATAWIDTH)) CC_SPEEDCO
 //######################################################################
 //#	TO LED MATRIZ: VISUALIZATION
 //######################################################################
+
+
 assign regGAME_data0_wire = DATA_FIXED_INITREGPOINT_0;
 assign regGAME_data1_wire = DATA_FIXED_INITREGPOINT_1;
 assign regGAME_data2_wire = DATA_FIXED_INITREGPOINT_2;

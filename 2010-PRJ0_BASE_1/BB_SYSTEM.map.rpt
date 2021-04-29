@@ -1,5 +1,5 @@
-Analysis & Synthesis report for BB_SYSTEM
-Wed Apr 28 12:05:20 2021
+Analysis & Elaboration report for BB_SYSTEM
+Wed Apr 28 16:07:35 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -7,34 +7,11 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM
- 15. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u0
- 16. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u1
- 17. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u2
- 18. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u3
- 19. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u4
- 20. Parameter Settings for User Entity Instance: SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0
- 21. Parameter Settings for User Entity Instance: CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0
- 22. Parameter Settings for User Entity Instance: matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0
- 23. Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0"
- 24. Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0"
- 25. Port Connectivity Checks: "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0"
- 26. Post-Synthesis Netlist Statistics for Top Partition
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
- 29. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
+  6. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -59,27 +36,43 @@ https://fpgasoftware.intel.com/eula.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
+; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 28 12:05:20 2021       ;
+; Analysis & Elaboration Status      ; Failed - Wed Apr 28 16:07:35 2021           ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 223                                         ;
-;     Total combinational functions  ; 222                                         ;
-;     Dedicated logic registers      ; 125                                         ;
-; Total registers                    ; 125                                         ;
-; Total pins                         ; 15                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                              ;
+; Analysis & Elaboration Settings                                                                            ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -165,421 +158,74 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
-; rtl/shift_reg_start_done.v       ; yes             ; User Verilog HDL File  ; C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v ;         ;
-; rtl/max7219_ctrl.v               ; yes             ; User Verilog HDL File  ; C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v         ;         ;
-; rtl/SC_DEBOUNCE1.v               ; yes             ; User Verilog HDL File  ; C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v         ;         ;
-; BB_SYSTEM.v                      ; yes             ; User Verilog HDL File  ; C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v                ;         ;
-; rtl/SC_upSPEEDCOUNTER.v          ; yes             ; User Verilog HDL File  ; C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_upSPEEDCOUNTER.v    ;         ;
-; CC_SPEEDCOMPARATOR.v             ; yes             ; User Verilog HDL File  ; C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v       ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 223                      ;
-;                                             ;                          ;
-; Total combinational functions               ; 222                      ;
-; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 94                       ;
-;     -- 3 input functions                    ; 34                       ;
-;     -- <=2 input functions                  ; 94                       ;
-;                                             ;                          ;
-; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 157                      ;
-;     -- arithmetic mode                      ; 65                       ;
-;                                             ;                          ;
-; Total registers                             ; 125                      ;
-;     -- Dedicated logic registers            ; 125                      ;
-;     -- I/O registers                        ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 15                       ;
-;                                             ;                          ;
-; Embedded Multiplier 9-bit elements          ; 0                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
-; Maximum fan-out                             ; 125                      ;
-; Total fan-out                               ; 1128                     ;
-; Average fan-out                             ; 2.99                     ;
-+---------------------------------------------+--------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                    ;
-+----------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name          ; Library Name ;
-+----------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
-; |BB_SYSTEM                                               ; 222 (0)             ; 125 (0)                   ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |BB_SYSTEM                                                                                 ; BB_SYSTEM            ; work         ;
-;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u0|                        ; 27 (27)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u0                                                    ; SC_DEBOUNCE1         ; work         ;
-;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u1|                        ; 27 (27)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u1                                                    ; SC_DEBOUNCE1         ; work         ;
-;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u2|                        ; 27 (27)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u2                                                    ; SC_DEBOUNCE1         ; work         ;
-;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u3|                        ; 27 (27)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u3                                                    ; SC_DEBOUNCE1         ; work         ;
-;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u4|                        ; 27 (27)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u4                                                    ; SC_DEBOUNCE1         ; work         ;
-;    |matrix_ctrl:matrix_ctrl_unit_0|                      ; 87 (36)             ; 55 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0                                                  ; matrix_ctrl          ; work         ;
-;       |shift_reg_start_done:shift_reg_start_done_unit_0| ; 51 (51)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ; shift_reg_start_done ; work         ;
-+----------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
-+----------------------------------------+----------------------------------------+----------------------------+------------------------------------+------------------------+------------------------------------+------------------------+-------------------------------------+-------------------------+---------------------------------+---------------------+---------------------------------------+---------------------------+------------------------------------+------------------------+---------------------+-----------------+----------------+
-; Name                                   ; state_reg.DISPLAY_TEST_OFF_WAIT2FINISH ; state_reg.DISPLAY_TEST_OFF ; state_reg.DISPLAY_TEST_WAIT2FINISH ; state_reg.DISPLAY_TEST ; state_reg.DIS_SHUTDOWN_WAIT2FINISH ; state_reg.DIS_SHUTDOWN ; state_reg.SET_SCAN_MODE_WAIT2FINISH ; state_reg.SET_SCAN_MODE ; state_reg.INTENSITY_WAIT2FINISH ; state_reg.INTENSITY ; state_reg.SET_DECODE_MODE_WAIT2FINISH ; state_reg.SET_DECODE_MODE ; state_reg.UPDATE_FRAME_WAIT2FINISH ; state_reg.UPDATE_FRAME ; state_reg.MAIN_LOOP ; state_reg.START ; state_reg.STOP ;
-+----------------------------------------+----------------------------------------+----------------------------+------------------------------------+------------------------+------------------------------------+------------------------+-------------------------------------+-------------------------+---------------------------------+---------------------+---------------------------------------+---------------------------+------------------------------------+------------------------+---------------------+-----------------+----------------+
-; state_reg.START                        ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 0               ; 0              ;
-; state_reg.MAIN_LOOP                    ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 1                   ; 1               ; 0              ;
-; state_reg.UPDATE_FRAME                 ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 1                      ; 0                   ; 1               ; 0              ;
-; state_reg.UPDATE_FRAME_WAIT2FINISH     ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 1                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.SET_DECODE_MODE              ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 1                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.SET_DECODE_MODE_WAIT2FINISH  ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 1                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.INTENSITY                    ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 1                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.INTENSITY_WAIT2FINISH        ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 1                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.SET_SCAN_MODE                ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 1                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.SET_SCAN_MODE_WAIT2FINISH    ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 1                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.DIS_SHUTDOWN                 ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 1                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.DIS_SHUTDOWN_WAIT2FINISH     ; 0                                      ; 0                          ; 0                                  ; 0                      ; 1                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.DISPLAY_TEST                 ; 0                                      ; 0                          ; 0                                  ; 1                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.DISPLAY_TEST_WAIT2FINISH     ; 0                                      ; 0                          ; 1                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.DISPLAY_TEST_OFF             ; 0                                      ; 1                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.DISPLAY_TEST_OFF_WAIT2FINISH ; 1                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
-; state_reg.STOP                         ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 1              ;
-+----------------------------------------+----------------------------------------+----------------------------+------------------------------------+------------------------+------------------------------------+------------------------+-------------------------------------+-------------------------+---------------------------------+---------------------+---------------------------------------+---------------------------+------------------------------------+------------------------+---------------------+-----------------+----------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                              ;
-+----------------------------------------------------+----------------------------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal                                ; Free of Timing Hazards ;
-+----------------------------------------------------+----------------------------------------------------+------------------------+
-; matrix_ctrl:matrix_ctrl_unit_0|ctrl_sr[1]          ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP ; yes                    ;
-; matrix_ctrl:matrix_ctrl_unit_0|ctrl_sr[0]          ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                                                    ;                        ;
-+----------------------------------------------------+----------------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                              ;
-+-------------------------------------------------------------------+-------------------------------------------------------------+
-; Register name                                                     ; Reason for Removal                                          ;
-+-------------------------------------------------------------------+-------------------------------------------------------------+
-; matrix_ctrl:matrix_ctrl_unit_0|Trig_Register1                     ; Merged with matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~0 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~21                       ; Lost fanout                                                 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~22                       ; Lost fanout                                                 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~23                       ; Lost fanout                                                 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~25                       ; Lost fanout                                                 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~26                       ; Lost fanout                                                 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~27                       ; Lost fanout                                                 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~28                       ; Lost fanout                                                 ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST             ; Stuck at GND due to stuck port data_in                      ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg.STOP                     ; Stuck at GND due to stuck port data_in                      ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST_WAIT2FINISH ; Stuck at GND due to stuck port data_in                      ;
-; Total Number of Removed Registers = 11                            ;                                                             ;
-+-------------------------------------------------------------------+-------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                           ;
-+-------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
-; Register name                                         ; Reason for Removal        ; Registers Removed due to This Register                            ;
-+-------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST ; Stuck at GND              ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST_WAIT2FINISH ;
-;                                                       ; due to stuck port data_in ;                                                                   ;
-+-------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 125   ;
-; Number of registers using Synchronous Clear  ; 72    ;
-; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 55    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 50    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[15] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[14]   ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[1]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM ;
-+---------------------------+----------+------------------------------------+
-; Parameter Name            ; Value    ; Type                               ;
-+---------------------------+----------+------------------------------------+
-; DATAWIDTH_BUS             ; 8        ; Signed Integer                     ;
-; PRESCALER_DATAWIDTH       ; 23       ; Signed Integer                     ;
-; DISPLAY_DATAWIDTH         ; 12       ; Signed Integer                     ;
-; DATA_FIXED_INITREGPOINT_7 ; 00010000 ; Unsigned Binary                    ;
-; DATA_FIXED_INITREGPOINT_6 ; 00111000 ; Unsigned Binary                    ;
-; DATA_FIXED_INITREGPOINT_5 ; 01111100 ; Unsigned Binary                    ;
-; DATA_FIXED_INITREGPOINT_4 ; 01111100 ; Unsigned Binary                    ;
-; DATA_FIXED_INITREGPOINT_3 ; 00111000 ; Unsigned Binary                    ;
-; DATA_FIXED_INITREGPOINT_2 ; 00010000 ; Unsigned Binary                    ;
-; DATA_FIXED_INITREGPOINT_1 ; 00000000 ; Unsigned Binary                    ;
-; DATA_FIXED_INITREGPOINT_0 ; 00010000 ; Unsigned Binary                    ;
-+---------------------------+----------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u0 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 11    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u1 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 11    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u2 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 11    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u3 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 11    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u4 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 11    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0 ;
-+--------------------------+-------+--------------------------------------------------+
-; Parameter Name           ; Value ; Type                                             ;
-+--------------------------+-------+--------------------------------------------------+
-; upSPEEDCOUNTER_DATAWIDTH ; 23    ; Signed Integer                                   ;
-+--------------------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0 ;
-+---------------------------+-------+---------------------------------------------------+
-; Parameter Name            ; Value ; Type                                              ;
-+---------------------------+-------+---------------------------------------------------+
-; SPEEDCOMPARATOR_DATAWIDTH ; 23    ; Signed Integer                                    ;
-+---------------------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ;
-+----------------+-------+-----------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                                ;
-+----------------+-------+-----------------------------------------------------------------------------------------------------+
-; N              ; 16    ; Signed Integer                                                                                      ;
-+----------------+-------+-----------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0" ;
-+-----------+-------+----------+------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity ; Details                                                                      ;
-+-----------+-------+----------+------------------------------------------------------------------------------+
-; d[15..12] ; Input ; Info     ; Stuck at GND                                                                 ;
-+-----------+-------+----------+------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------+
-; Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0" ;
-+--------------+-------+----------+--------------------------+
-; Port         ; Type  ; Severity ; Details                  ;
-+--------------+-------+----------+--------------------------+
-; disp_data[6] ; Input ; Info     ; Stuck at GND             ;
-; intensity[3] ; Input ; Info     ; Stuck at VCC             ;
-; intensity[2] ; Input ; Info     ; Stuck at GND             ;
-; intensity[1] ; Input ; Info     ; Stuck at VCC             ;
-; intensity[0] ; Input ; Info     ; Stuck at GND             ;
-+--------------+-------+----------+--------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0"                                                                                                                            ;
-+------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                         ; Type   ; Severity ; Details                                                                                                                                      ;
-+------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; CC_SPEEDCOMPARATOR_T0_OutLow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; CC_NIVEL_data_InBus          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 15                          ;
-; cycloneiii_ff         ; 125                         ;
-;     CLR               ; 5                           ;
-;     ENA CLR           ; 23                          ;
-;     ENA CLR SCLR      ; 17                          ;
-;     ENA CLR SLD       ; 10                          ;
-;     SCLR              ; 55                          ;
-;     plain             ; 15                          ;
-; cycloneiii_lcell_comb ; 224                         ;
-;     arith             ; 65                          ;
-;         2 data inputs ; 65                          ;
-;     normal            ; 159                         ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 34                          ;
-;         4 data inputs ; 94                          ;
-;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.41                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Apr 28 12:05:05 2021
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
+    Info: Processing started: Wed Apr 28 16:07:17 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM --analysis_and_elaboration
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/shift_reg_start_done.v
-    Info (12023): Found entity 1: shift_reg_start_done File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 34
+    Info (12023): Found entity 1: shift_reg_start_done File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/max7219_ctrl.v
-    Info (12023): Found entity 1: matrix_ctrl File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 18
+    Info (12023): Found entity 1: matrix_ctrl File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_debounce1.v
-    Info (12023): Found entity 1: SC_DEBOUNCE1 File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 44
+    Info (12023): Found entity 1: SC_DEBOUNCE1 File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 44
+Warning (10275): Verilog HDL Module Instantiation warning at BB_SYSTEM.v(168): ignored dangling comma in List of Port Connections File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 168
+Warning (10238): Verilog Module Declaration warning at BB_SYSTEM.v(48): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "BB_SYSTEM" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 48
 Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
-    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 21
+    Info (12023): Found entity 1: BB_SYSTEM File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_upspeedcounter.v
-    Info (12023): Found entity 1: SC_upSPEEDCOUNTER File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_upSPEEDCOUNTER.v Line: 21
+    Info (12023): Found entity 1: SC_upSPEEDCOUNTER File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_upSPEEDCOUNTER.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file sc_upcounter.v
-    Info (12023): Found entity 1: SC_upCOUNTER File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/SC_upCOUNTER.v Line: 21
+    Info (12023): Found entity 1: SC_upCOUNTER File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/SC_upCOUNTER.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file cc_speedcomparator.v
-    Info (12023): Found entity 1: CC_SPEEDCOMPARATOR File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(172): created implicit net for "STATEMACHINEBACKG_upcount_cwire" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 172
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(231): created implicit net for "BB_SYSTEM_TEST0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 231
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(232): created implicit net for "BB_SYSTEM_TEST1" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 232
-Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(233): created implicit net for "BB_SYSTEM_TEST2" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 233
+    Info (12023): Found entity 1: CC_SPEEDCOMPARATOR File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_reg_general_nivel.v
+    Info (12023): Found entity 1: SC_RegNIVEL File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_NIVEL.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(188): created implicit net for "STATEMACHINEBACKG_clear_cwire" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 188
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(189): created implicit net for "STATEMACHINEBACKG_load_cwire" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 189
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(203): created implicit net for "STATEMACHINEBACKG_upcount_cwire" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 203
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(265): created implicit net for "BB_SYSTEM_TEST0" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 265
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(266): created implicit net for "BB_SYSTEM_TEST1" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 266
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(267): created implicit net for "BB_SYSTEM_TEST2" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 267
 Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(231): object "BB_SYSTEM_TEST0" assigned a value but never read File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 231
-Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(232): object "BB_SYSTEM_TEST1" assigned a value but never read File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 232
-Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(233): object "BB_SYSTEM_TEST2" assigned a value but never read File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 233
-Info (12128): Elaborating entity "SC_DEBOUNCE1" for hierarchy "SC_DEBOUNCE1:SC_DEBOUNCE1_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 127
-Warning (10230): Verilog HDL assignment warning at SC_DEBOUNCE1.v(70): truncated value with size 32 to match size of target (11) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 70
-Info (12128): Elaborating entity "SC_upSPEEDCOUNTER" for hierarchy "SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 173
-Info (12128): Elaborating entity "CC_SPEEDCOMPARATOR" for hierarchy "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 178
-Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(49): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 49
-Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(52): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 52
-Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(55): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 55
-Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(58): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 58
-Info (12128): Elaborating entity "matrix_ctrl" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 216
-Warning (10036): Verilog HDL or VHDL warning at max7219_ctrl.v(58): object "Trig_SignalNEG" assigned a value but never read File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 58
-Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(50): truncated value with size 32 to match size of target (4) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 50
-Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(51): truncated value with size 32 to match size of target (4) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 51
-Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(260): truncated value with size 32 to match size of target (4) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 260
-Warning (10240): Verilog HDL Always Construct warning at max7219_ctrl.v(154): inferring latch(es) for variable "ctrl_sr", which holds its previous value in one or more paths through the always construct File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 154
-Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(278): truncated value with size 32 to match size of target (3) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 278
-Info (10041): Inferred latch for "ctrl_sr[0]" at max7219_ctrl.v(154) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 154
-Info (10041): Inferred latch for "ctrl_sr[1]" at max7219_ctrl.v(154) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 154
-Info (12128): Elaborating entity "shift_reg_start_done" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 109
-Warning (10230): Verilog HDL assignment warning at shift_reg_start_done.v(69): truncated value with size 32 to match size of target (16) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 69
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 7 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_downButton_InLow" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 81
-Info (21057): Implemented 238 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 223 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 4760 megabytes
-    Info: Processing ended: Wed Apr 28 12:05:20 2021
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:32
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(265): object "BB_SYSTEM_TEST0" assigned a value but never read File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 265
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(266): object "BB_SYSTEM_TEST1" assigned a value but never read File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 266
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(267): object "BB_SYSTEM_TEST2" assigned a value but never read File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 267
+Info (12128): Elaborating entity "SC_DEBOUNCE1" for hierarchy "SC_DEBOUNCE1:SC_DEBOUNCE1_u0" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 138
+Warning (10230): Verilog HDL assignment warning at SC_DEBOUNCE1.v(70): truncated value with size 32 to match size of target (11) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 70
+Info (12128): Elaborating entity "SC_upSPEEDCOUNTER" for hierarchy "SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 204
+Info (12128): Elaborating entity "CC_SPEEDCOMPARATOR" for hierarchy "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 210
+Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(49): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 49
+Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(52): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(55): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 55
+Warning (10235): Verilog HDL Always Construct warning at CC_SPEEDCOMPARATOR.v(58): variable "CC_NIVEL_data_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v Line: 58
+Info (12128): Elaborating entity "matrix_ctrl" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 250
+Warning (10036): Verilog HDL or VHDL warning at max7219_ctrl.v(58): object "Trig_SignalNEG" assigned a value but never read File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 58
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(50): truncated value with size 32 to match size of target (4) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 50
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(51): truncated value with size 32 to match size of target (4) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 51
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(260): truncated value with size 32 to match size of target (4) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 260
+Warning (10240): Verilog HDL Always Construct warning at max7219_ctrl.v(154): inferring latch(es) for variable "ctrl_sr", which holds its previous value in one or more paths through the always construct File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 154
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(278): truncated value with size 32 to match size of target (3) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 278
+Info (10041): Inferred latch for "ctrl_sr[0]" at max7219_ctrl.v(154) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 154
+Info (10041): Inferred latch for "ctrl_sr[1]" at max7219_ctrl.v(154) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 154
+Info (12128): Elaborating entity "shift_reg_start_done" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0" File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 109
+Warning (10230): Verilog HDL assignment warning at shift_reg_start_done.v(69): truncated value with size 32 to match size of target (16) File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/rtl/shift_reg_start_done.v Line: 69
+Error (12006): Node instance "SC_REG_GENERAL_NIVEL_u0" instantiates undefined entity "SC_REG_GENERAL_NIVEL". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 192
+Info (144001): Generated suppressed messages file D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 23 warnings
+    Error: Peak virtual memory: 4715 megabytes
+    Error: Processing ended: Wed Apr 28 16:07:35 2021
+    Error: Elapsed time: 00:00:18
+    Error: Total CPU time (on all processors): 00:00:49
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg.
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in D:/Universidad Camilo/Andes/20211/Sistemas Electronicos digitales/Projecto/proyecto final/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg.
 
 
