@@ -387,6 +387,7 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 
 set_global_assignment -name SDC_FILE BB_SYSTEM.sdc
+set_global_assignment -name VERILOG_FILE rtl/SC_STATEMACHINE_MAIN.v
 set_global_assignment -name VERILOG_FILE rtl/shift_reg_start_done.v
 set_global_assignment -name VERILOG_FILE rtl/max7219_ctrl.v
 set_global_assignment -name VERILOG_FILE rtl/SC_DEBOUNCE1.v

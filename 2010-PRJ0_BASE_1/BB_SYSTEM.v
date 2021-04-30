@@ -44,7 +44,7 @@ module BB_SYSTEM (
 	BB_SYSTEM_leftButton_InLow,
 	BB_SYSTEM_rightButton_InLow,
 	BB_SYSTEM_upButton_InLow,
-	BB_SYSTEM_downButton_InLow,
+	BB_SYSTEM_downButton_InLow
 );
 //=======================================================
 //  PARAMETER declarations
@@ -97,7 +97,6 @@ wire 	BB_SYSTEM_leftButton_InLow_cwire;
 wire 	BB_SYSTEM_rightButton_InLow_cwire;
 wire 	BB_SYSTEM_upButton_InLow_cwire;
 wire 	BB_SYSTEM_downButton_InLow_cwire;
-
 //=======================================================
 // WIRE speed
 wire [PRESCALER_DATAWIDTH-1:0] upSPEEDCOUNTER_data_BUS_wire;
@@ -160,11 +159,11 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u3 (
 );
 
 SC_DEBOUNCE1 SC_DEBOUNCE1_u4 (
-// port map - connection between master ports and signals/registers   
+// port map - connection between master ports and signals/registers      
 	.SC_DEBOUNCE1_button_Out(BB_SYSTEM_downButton_InLow_cwire),
 	.SC_DEBOUNCE1_CLOCK_50(BB_SYSTEM_CLOCK_50),
 	.SC_DEBOUNCE1_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
-	.SC_DEBOUNCE1_button_In(~BB_SYSTEM_downButton_InLow),
+	.SC_DEBOUNCE1_button_In(~BB_SYSTEM_downButton_InLow)
 );
 
 //######################################################################
@@ -180,7 +179,7 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u4 (
 
 
 
-SC_REG_GENERAL_NIVEL #(.REG_GENERAL_NIVEL_DATAWIDTH(2), .DATA_FIXED_INITREG(2'b00)) SC_REG_GENERAL_NIVEL_u0 (
+SC_REG_GENERAL_NIVEL#(.RegNIVEL_DATAWIDTH(2), .DATA_FIXED_INITREG(2'b00)) SC_REG_GENERAL_NIVEL_u0 (
 // port map - connection between master ports and signals/registers   
 	.SC_RegNIVEL_data_OutBUS(RegNivel_Out),
 	.SC_RegNIVEL_CLOCK_50(BB_SYSTEM_CLOCK_50),

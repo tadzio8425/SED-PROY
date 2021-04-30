@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegNIVEL #(parameter RegNIVEL_DATAWIDTH=2'b00, parameter DATA_FIXED_INITREG=2'b00)(
+module SC_REG_GENERAL_NIVEL #(parameter RegNIVEL_DATAWIDTH=2'b00, parameter DATA_FIXED_INITREG=2'b00)(
 	//////////// OUTPUTS //////////
 	SC_RegNIVEL_data_OutBUS,
 	//////////// INPUTS //////////
