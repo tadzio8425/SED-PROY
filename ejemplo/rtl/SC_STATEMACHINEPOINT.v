@@ -53,7 +53,9 @@ localparam STATE_CHECK_1									= 8;
 output reg		SC_STATEMACHINEPOINT_clear_OutLow;
 output reg		SC_STATEMACHINEPOINT_load0_OutLow;
 output reg		SC_STATEMACHINEPOINT_load1_OutLow;
+
 output reg		[1:0] SC_STATEMACHINEPOINT_shiftselection_Out;
+
 input			SC_STATEMACHINEPOINT_CLOCK_50;
 input 			SC_STATEMACHINEPOINT_RESET_InHigh;
 input			SC_STATEMACHINEPOINT_startButton_InLow;
