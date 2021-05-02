@@ -18,17 +18,16 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_REG_GENERAL_NIVEL #(parameter RegNIVEL_DATAWIDTH=2'b00, parameter DATA_FIXED_INITREG=2'b00)(
+module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8, parameter DATA_FIXED_INITREGBACKG=8'b00000000)(
 	//////////// OUTPUTS //////////
-	SC_RegNIVEL_data_OutBUS,
+	SC_RegBACKGTYPE_data_OutBUS,
 	//////////// INPUTS //////////
-	SC_RegNIVEL_CLOCK_50,
-	SC_RegNIVEL_RESET_InHigh,
-	SC_RegNIVEL_clear_InLow, 
-	SC_RegNIVEL_load_InLow, 
-	SC_RegNIVEL_data_InBUS,
-	
-	change_level_InLow,
+	SC_RegBACKGTYPE_CLOCK_50,
+	SC_RegBACKGTYPE_RESET_InHigh,
+	SC_RegBACKGTYPE_clear_InLow, 
+	SC_RegBACKGTYPE_load_InLow, 
+	SC_RegBACKGTYPE_shiftselection_In,
+	SC_RegBACKGTYPE_data_InBUS
 );
 //=======================================================
 //  PARAMETER declarations
@@ -37,52 +36,48 @@ module SC_REG_GENERAL_NIVEL #(parameter RegNIVEL_DATAWIDTH=2'b00, parameter DATA
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[RegNIVEL_DATAWIDTH-1:0]	SC_RegNIVEL_data_OutBUS;
-input		SC_RegNIVEL_CLOCK_50;
-input		SC_RegNIVEL_RESET_InHigh;
-input		SC_RegNIVEL_clear_InLow;
-input		SC_RegNIVEL_load_InLow;	
-input 	change_level_InLow;
-
-input		[RegNIVEL_DATAWIDTH-1:0]	SC_RegNIVEL_data_InBUS;
+output		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_OutBUS;
+input		SC_RegBACKGTYPE_CLOCK_50;
+input		SC_RegBACKGTYPE_RESET_InHigh;
+input		SC_RegBACKGTYPE_clear_InLow;
+input		SC_RegBACKGTYPE_load_InLow;	
+input		[1:0] SC_RegBACKGTYPE_shiftselection_In;
+input		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_InBUS;
 
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [RegNIVEL_DATAWIDTH-1:0] RegNIVEL_Register;
-reg [RegNIVEL_DATAWIDTH-1:0] RegNIVEL_Signal;
+reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Register;
+reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Signal;
 //=======================================================
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-	if (SC_RegNIVEL_clear_InLow == 1'b0)
-		RegNIVEL_Signal = DATA_FIXED_INITREG;
-	else if (SC_RegNIVEL_load_InLow == 1'b0)
-		RegNIVEL_Signal = SC_RegNIVEL_data_InBUS;
-		
-	else if (change_level_InLow == 1'b0)
-		RegNIVEL_Signal = SC_RegNIVEL_data_InBUS+1'b1;
-	
-	/*
-	else if (SC_RegNIVEL_shiftselection_In == 2'b01)
-		RegNIVEL_Signal = {RegNIVEL_Register[RegNIVEL_DATAWIDTH-2:0],RegNIVEL_Register[RegNIVEL_DATAWIDTH-1]}; */
+	if (SC_RegBACKGTYPE_clear_InLow == 1'b0)
+		RegBACKGTYPE_Signal = DATA_FIXED_INITREGBACKG;
+	else if (SC_RegBACKGTYPE_load_InLow == 1'b0)
+		RegBACKGTYPE_Signal = SC_RegBACKGTYPE_data_InBUS;
+	else if (SC_RegBACKGTYPE_shiftselection_In == 2'b01)
+		RegBACKGTYPE_Signal = {RegBACKGTYPE_Register[RegBACKGTYPE_DATAWIDTH-2:0],RegBACKGTYPE_Register[RegBACKGTYPE_DATAWIDTH-1]};
+	else if (SC_RegBACKGTYPE_shiftselection_In== 2'b10)
+		RegBACKGTYPE_Signal = {RegBACKGTYPE_Register[0],RegBACKGTYPE_Register[RegBACKGTYPE_DATAWIDTH-1:1]};
 	else
-		RegNIVEL_Signal = RegNIVEL_Register;
+		RegBACKGTYPE_Signal = RegBACKGTYPE_Register;
 	end	
 //STATE REGISTER: SEQUENTIAL
-always @(posedge SC_RegNIVEL_CLOCK_50, posedge SC_RegNIVEL_RESET_InHigh)
+always @(posedge SC_RegBACKGTYPE_CLOCK_50, posedge SC_RegBACKGTYPE_RESET_InHigh)
 begin
-	if (SC_RegNIVEL_RESET_InHigh == 1'b1)
-		RegNIVEL_Register <= 0;
+	if (SC_RegBACKGTYPE_RESET_InHigh == 1'b1)
+		RegBACKGTYPE_Register <= 0;
 	else
-		RegNIVEL_Register <= RegNIVEL_Signal;
+		RegBACKGTYPE_Register <= RegBACKGTYPE_Signal;
 end
 //=======================================================
 //  Outputs
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
-assign SC_RegNIVEL_data_OutBUS = RegNIVEL_Register;
+assign SC_RegBACKGTYPE_data_OutBUS = RegBACKGTYPE_Register;
 
 endmodule

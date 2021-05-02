@@ -65,6 +65,8 @@ module BB_SYSTEM (
  
  // 
  parameter DATA_FIXED_INITREGNivel_0 = 2'b00;
+ parameter change_level_InLow=1'b1;
+
  
  
  //=======================================================
@@ -97,6 +99,13 @@ wire 	BB_SYSTEM_leftButton_InLow_cwire;
 wire 	BB_SYSTEM_rightButton_InLow_cwire;
 wire 	BB_SYSTEM_upButton_InLow_cwire;
 wire 	BB_SYSTEM_downButton_InLow_cwire;
+
+
+
+
+
+
+
 //=======================================================
 // WIRE speed
 wire [PRESCALER_DATAWIDTH-1:0] upSPEEDCOUNTER_data_BUS_wire;
@@ -105,7 +114,27 @@ wire SPEEDCOMPARATOR_2_STATEMACHINEBACKG_T0_cwire;
 
 
 
-// GAME
+//=======================================================
+// WIRE state machine main
+//======================================================
+
+
+
+
+//GAME INPUT dispaly
+wire [DATAWIDTH_BUS-1:0] In_state_machine_0;
+wire [DATAWIDTH_BUS-1:0] In_state_machine_1;
+wire [DATAWIDTH_BUS-1:0] In_state_machine_2;
+wire [DATAWIDTH_BUS-1:0] In_state_machine_3;
+wire [DATAWIDTH_BUS-1:0] In_state_machine_4;
+wire [DATAWIDTH_BUS-1:0] In_state_machine_5;
+wire [DATAWIDTH_BUS-1:0] In_state_machine_6;
+wire [DATAWIDTH_BUS-1:0] In_state_machine_7;
+
+
+
+// GAME otput dispaly
+
 wire [DATAWIDTH_BUS-1:0] regGAME_data7_wire;
 wire [DATAWIDTH_BUS-1:0] regGAME_data6_wire;
 wire [DATAWIDTH_BUS-1:0] regGAME_data5_wire;
@@ -116,7 +145,14 @@ wire [DATAWIDTH_BUS-1:0] regGAME_data1_wire;
 wire [DATAWIDTH_BUS-1:0] regGAME_data0_wire;
 
 
+
+
+
+
 // REG GENERAL CABLES
+
+
+wire [1:0] change_level_InLow_wire;
 wire [2-1:0] RegNivel_Out;
 wire 	[7:0] data_max;
 wire 	[2:0] add;
@@ -179,6 +215,10 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u4 (
 
 
 
+
+
+
+
 SC_REG_GENERAL_NIVEL#(.RegNIVEL_DATAWIDTH(2), .DATA_FIXED_INITREG(2'b00)) SC_REG_GENERAL_NIVEL_u0 (
 // port map - connection between master ports and signals/registers   
 	.SC_RegNIVEL_data_OutBUS(RegNivel_Out),
@@ -186,7 +226,10 @@ SC_REG_GENERAL_NIVEL#(.RegNIVEL_DATAWIDTH(2), .DATA_FIXED_INITREG(2'b00)) SC_REG
 	.SC_RegNIVEL_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
 	.SC_RegNIVEL_clear_InLow(STATEMACHINEBACKG_clear_cwire),	
 	.SC_RegNIVEL_load_InLow(STATEMACHINEBACKG_load_cwire),
-	.SC_RegNIVEL_data_InBUS(DATA_FIXED_INITREGNivel_0)
+	.SC_RegNIVEL_data_InBUS(DATA_FIXED_INITREGNivel_0),
+	.change_level_InLow(change_level_InLow)
+	
+	
 
 );
 
@@ -204,12 +247,69 @@ SC_upSPEEDCOUNTER #(.upSPEEDCOUNTER_DATAWIDTH(PRESCALER_DATAWIDTH)) SC_upSPEEDCO
 
 CC_SPEEDCOMPARATOR #(.SPEEDCOMPARATOR_DATAWIDTH(PRESCALER_DATAWIDTH)) CC_SPEEDCOMPARATOR_u0 (
 	.CC_SPEEDCOMPARATOR_T0_OutLow(SPEEDCOMPARATOR_2_STATEMACHINEBACKG_T0_cwire),
+	.CC_NIVEL_data_InBus(RegNivel_Out),
 	.CC_SPEEDCOMPARATOR_data_InBUS(upSPEEDCOUNTER_data_BUS_wire)
 	
 );
 
 //////////     
 
+
+wire clear;
+wire load;
+wire reg2nivel;
+
+
+SC_STATEMACHINE_MAIN SC_STATEMACHINE_MAIN_U0(
+	// port map - connection between master ports and signals/registers    
+
+
+
+	.SC_STATEMACHINE_MAIN_clear_OutLow(clear),
+	.SC_STATEMACHINE_MAIN_load_OutLow(load), 
+	
+	
+	///////// NIVEL ACTUAL (PASA A REGISTRO) //////
+	.SC_STATEMACHINE_MAIN_RegNivel_data_OutBus(reg2nivel),
+
+	
+	///////// dispaly salida //////
+	.SC_STATEMACHINE_LoadDisplay_Out_1(regGAME_data0_wire),
+	.SC_STATEMACHINE_LoadDisplay_Out_2(regGAME_data1_wire),
+	.SC_STATEMACHINE_LoadDisplay_Out_3(regGAME_data2_wire),
+	.SC_STATEMACHINE_LoadDisplay_Out_4(regGAME_data3_wire),
+	.SC_STATEMACHINE_LoadDisplay_Out_5(regGAME_data4_wire),
+	.SC_STATEMACHINE_LoadDisplay_Out_6(regGAME_data5_wire),
+	.SC_STATEMACHINE_LoadDisplay_Out_7(regGAME_data6_wire),
+	.SC_STATEMACHINE_LoadDisplay_Out_8(regGAME_data7_wire),
+	
+	
+	
+	//////////// INPUTS //////////
+	
+	.SC_STATEMACHINE_LoadDisplay_In_1(In_state_machine_0),
+	.SC_STATEMACHINE_LoadDisplay_In_2(In_state_machine_1),
+	.SC_STATEMACHINE_LoadDisplay_In_3(In_state_machine_2),
+	.SC_STATEMACHINE_LoadDisplay_In_4(In_state_machine_3),
+	.SC_STATEMACHINE_LoadDisplay_In_5(In_state_machine_4),
+	.SC_STATEMACHINE_LoadDisplay_In_6(In_state_machine_5),
+	.SC_STATEMACHINE_LoadDisplay_In_7(In_state_machine_6),
+	.SC_STATEMACHINE_LoadDisplay_In_8(In_state_machine_7),
+	
+	.SC_STATEMACHINE_MAIN_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.SC_STATEMACHINE_MAIN_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
+	.SC_STATEMACHINE_MAIN_startButton_InLow(BB_SYSTEM_startButton_Out),
+	.SC_STATEMACHINE_MAIN_rightButton_InLow(BB_SYSTEM_rightButton_Out),
+	.SC_STATEMACHINE_MAIN_leftButton_InLow(BB_SYSTEM_leftButton_Out),
+	.SC_STATEMACHINE_MAIN_downButton_InLow(BB_SYSTEM_downButton_Out),
+	.SC_STATEMACHINE_MAIN_upButton_InLow(BB_SYSTEM_upButton_Out),
+	
+	
+	
+	///////// NIVEL ACTUAL (ENTRA DEL REGISTRO) //////
+	.SC_STATEMACHINE_MAIN_RegNivel_data_InBus(RegNivel_Out)
+
+);
 
 
 
@@ -219,6 +319,26 @@ CC_SPEEDCOMPARATOR #(.SPEEDCOMPARATOR_DATAWIDTH(PRESCALER_DATAWIDTH)) CC_SPEEDCO
 //######################################################################
 
 
+
+
+assign BB_SYSTEM_startButton_Out = BB_SYSTEM_startButton_InLow_cwire;
+assign BB_SYSTEM_upButton_Out = BB_SYSTEM_upButton_InLow_cwire;
+assign BB_SYSTEM_downButton_Out = BB_SYSTEM_downButton_InLow_cwire;
+assign BB_SYSTEM_leftButton_Out = BB_SYSTEM_leftButton_InLow_cwire;
+assign BB_SYSTEM_rightButton_Out = BB_SYSTEM_rightButton_InLow_cwire;
+
+
+assign In_state_machine_0 = DATA_FIXED_INITREGPOINT_0;
+assign In_state_machine_1 = DATA_FIXED_INITREGPOINT_1;
+assign In_state_machine_2 = DATA_FIXED_INITREGPOINT_2;
+assign In_state_machine_3 = DATA_FIXED_INITREGPOINT_3;
+assign In_state_machine_4 = DATA_FIXED_INITREGPOINT_4;
+assign In_state_machine_5 = DATA_FIXED_INITREGPOINT_5;
+assign In_state_machine_6 = DATA_FIXED_INITREGPOINT_6;
+assign In_state_machine_7 = DATA_FIXED_INITREGPOINT_7;
+
+
+/*  se cambian no es necesario asignarlos 
 assign regGAME_data0_wire = DATA_FIXED_INITREGPOINT_0;
 assign regGAME_data1_wire = DATA_FIXED_INITREGPOINT_1;
 assign regGAME_data2_wire = DATA_FIXED_INITREGPOINT_2;
@@ -227,6 +347,10 @@ assign regGAME_data4_wire = DATA_FIXED_INITREGPOINT_4;
 assign regGAME_data5_wire = DATA_FIXED_INITREGPOINT_5;
 assign regGAME_data6_wire = DATA_FIXED_INITREGPOINT_6;
 assign regGAME_data7_wire = DATA_FIXED_INITREGPOINT_7;
+assign change_level_InLow_wire=change_level_InLow;*/
+
+
+
 
 assign data_max =(add==3'b000)?{regGAME_data0_wire[7],regGAME_data1_wire[7],regGAME_data2_wire[7],regGAME_data3_wire[7],regGAME_data4_wire[7],regGAME_data5_wire[7],regGAME_data6_wire[7],regGAME_data7_wire[7]}:
 	       (add==3'b001)?{regGAME_data0_wire[6],regGAME_data1_wire[6],regGAME_data2_wire[6],regGAME_data3_wire[6],regGAME_data4_wire[6],regGAME_data5_wire[6],regGAME_data6_wire[6],regGAME_data7_wire[6]}:
@@ -252,19 +376,17 @@ matrix_ctrl matrix_ctrl_unit_0(
 //#	TO TEST
 //######################################################################
 
-assign BB_SYSTEM_startButton_Out = BB_SYSTEM_startButton_InLow_cwire;
-assign BB_SYSTEM_leftButton_Out = BB_SYSTEM_leftButton_InLow_cwire;
-assign BB_SYSTEM_rightButton_Out = BB_SYSTEM_rightButton_InLow_cwire;
-assign BB_SYSTEM_upButton_Out = BB_SYSTEM_upButton_InLow_cwire;
-assign BB_SYSTEM_downButton_Out = BB_SYSTEM_downButton_InLow_cwire;
-
 
 
 //TO TEST
+
+
+
+
+/*/TO TEST
 assign BB_SYSTEM_TEST0 = BB_SYSTEM_startButton_InLow_cwire;
 assign BB_SYSTEM_TEST1 = BB_SYSTEM_startButton_InLow_cwire;
-assign BB_SYSTEM_TEST2 = BB_SYSTEM_startButton_InLow_cwire;
-
+assign BB_SYSTEM_TEST2 = BB_SYSTEM_startButton_InLow_cwire;*/
 
 
 endmodule
