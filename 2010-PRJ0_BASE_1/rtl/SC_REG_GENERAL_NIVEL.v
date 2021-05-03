@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_REG_GENERAL_NIVEL #(parameter RegNIVEL_DATAWIDTH=2'b00, parameter DATA_FIXED_INITREG=2'b00)(
+module SC_REG_GENERAL_NIVEL #(parameter RegNIVEL_DATAWIDTH=2, parameter DATA_FIXED_INITREG=2'b00)(
 	//////////// OUTPUTS //////////
 	SC_RegNIVEL_data_OutBUS,
 	//////////// INPUTS //////////
@@ -63,9 +63,6 @@ begin
 	else if (SC_RegNIVEL_change_level_InLow == 1'b0)
 		RegNIVEL_Signal = RegNIVEL_Register + 2'b01;
 	
-	/*
-	else if (SC_RegNIVEL_shiftselection_In == 2'b01)
-		RegNIVEL_Signal = {RegNIVEL_Register[RegNIVEL_DATAWIDTH-2:0],RegNIVEL_Register[RegNIVEL_DATAWIDTH-1]}; */
 	else
 		RegNIVEL_Signal = RegNIVEL_Register;
 	end	

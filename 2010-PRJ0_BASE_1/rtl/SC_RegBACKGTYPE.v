@@ -28,7 +28,8 @@ module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8, parameter DATA_FIXE
 	SC_RegBACKGTYPE_load_InLow, 
 	SC_RegBACKGTYPE_shiftselection_In,
 	SC_RegBACKGTYPE_data_InBUS,
-	SC_RegBACKTYPE_transition_InBUS
+	SC_RegBACKTYPE_transition_InBUS,
+	SC_RegBACKTYPE_transitionDATA_InBUS
 );
 //=======================================================
 //  PARAMETER declarations
@@ -45,6 +46,7 @@ input		SC_RegBACKGTYPE_load_InLow;
 input		SC_RegBACKTYPE_transition_InBUS;	
 input		[1:0] SC_RegBACKGTYPE_shiftselection_In;
 input		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_InBUS;
+input		[8-1:0] SC_RegBACKTYPE_transitionDATA_InBUS;
 
 //=======================================================
 //  REG/WIRE declarations
@@ -60,8 +62,8 @@ begin
 	if (SC_RegBACKGTYPE_clear_InLow == 1'b0)
 		RegBACKGTYPE_Signal = DATA_FIXED_INITREGBACKG;
 	
-	else if (SC_RegBACKTYPE_transition_InBUS != 2'b000)
-		RegBACKGTYPE_Signal = DATA_FIXED_INITREGBACKG;
+	else if (SC_RegBACKTYPE_transition_InBUS != 3'b000)
+		RegBACKGTYPE_Signal = SC_RegBACKTYPE_transitionDATA_InBUS;
 	else if (SC_RegBACKGTYPE_load_InLow == 1'b0)
 		RegBACKGTYPE_Signal = SC_RegBACKGTYPE_data_InBUS;
 	else if (SC_RegBACKGTYPE_shiftselection_In == 2'b01)

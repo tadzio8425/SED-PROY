@@ -44,7 +44,7 @@ input 	[2-1:0] CC_NIVEL_data_InBus;
 //=======================================================
 //  Structural coding
 //=======================================================
-always @(CC_SPEEDCOMPARATOR_data_InBUS)
+always @(CC_SPEEDCOMPARATOR_data_InBUS, CC_NIVEL_data_InBus)
 begin
 	if( CC_SPEEDCOMPARATOR_data_InBUS == 23'b11111111111111111111111 && CC_NIVEL_data_InBus == 2'b00)
 		CC_SPEEDCOMPARATOR_T0_OutLow = 1'b0;

@@ -36,6 +36,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "BB_SYSTEM_TEST0",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TEST1",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TEST2",
+					"strict" : false
+				},
+				{
 					"name" : "BB_SYSTEM_CLOCK_50",
 					"strict" : false
 				},

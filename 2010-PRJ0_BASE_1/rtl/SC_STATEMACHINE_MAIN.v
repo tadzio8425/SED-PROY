@@ -60,7 +60,7 @@ localparam ESTADO_FINAL                            = 13;
 output reg		SC_STATEMACHINE_MAIN_clear_OutLow;
 output reg		SC_STATEMACHINE_MAIN_load_OutLow;
 output reg		SC_STATEMACHINE_MAIN_changeLevel_OutLow;
-output reg		SC_STATEMACHINE_MAIN_transition_OutBUS;
+output reg	[3-1:0]SC_STATEMACHINE_MAIN_transition_OutBUS;
 
 
 

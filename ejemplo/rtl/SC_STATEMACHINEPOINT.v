@@ -123,7 +123,7 @@ begin
 			SC_STATEMACHINEPOINT_load0_OutLow = 1'b1;
 			SC_STATEMACHINEPOINT_load1_OutLow = 1'b1;
 			SC_STATEMACHINEPOINT_shiftselection_Out  = 2'b11; 
-			
+		end
 //=========================================================
 // STATE_START
 //=========================================================
@@ -193,17 +193,6 @@ begin
 			SC_STATEMACHINEPOINT_load0_OutLow = 1'b1;
 			SC_STATEMACHINEPOINT_load1_OutLow = 1'b1;
 			SC_STATEMACHINEPOINT_shiftselection_Out  = 2'b01; 
-		end
-//=========================================================
-// STATE_NIVEL_1
-//=========================================================
-	STATE_RIGHT_0 :	
-		begin
-			SC_STATEMACHINEPOINT_clear_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_vidas -= 1'b1;
-			SC_STATEMACHINEPOINT_load0_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_load1_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_shiftselection_Out  = 2'b10; 
 		end
 
 //=========================================================

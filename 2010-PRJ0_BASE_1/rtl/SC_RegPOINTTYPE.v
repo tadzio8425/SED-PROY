@@ -30,7 +30,9 @@ module SC_RegPOINTTYPE #(parameter RegPOINTTYPE_DATAWIDTH=8, parameter DATA_FIXE
 	SC_RegPOINTTYPE_load1_InLow, 
 	SC_RegPOINTTYPE_shiftselection_In,
 	SC_RegPOINTTYPE_data0_InBUS,
-	SC_RegPOINTTYPE_data1_InBUS
+	SC_RegPOINTTYPE_data1_InBUS,
+	SC_RegPOINTTYPE_transition_InBUS,
+	SC_RegPOINTTYPE_transitionDATA_InBUS
 );
 //=======================================================
 //  PARAMETER declarations
@@ -48,6 +50,8 @@ input		SC_RegPOINTTYPE_load1_InLow;
 input		[1:0] SC_RegPOINTTYPE_shiftselection_In;
 input		[RegPOINTTYPE_DATAWIDTH-1:0]	SC_RegPOINTTYPE_data0_InBUS;
 input		[RegPOINTTYPE_DATAWIDTH-1:0]	SC_RegPOINTTYPE_data1_InBUS;
+input		[8-1:0] SC_RegPOINTTYPE_transitionDATA_InBUS;
+input		SC_RegPOINTTYPE_transition_InBUS;	
 
 //=======================================================
 //  REG/WIRE declarations
@@ -62,6 +66,8 @@ always @(*)
 begin
 	if (SC_RegPOINTTYPE_clear_InLow == 1'b0)
 		RegPOINTTYPE_Signal = DATA_FIXED_INITREGPOINT;
+	else if (SC_RegPOINTTYPE_transition_InBUS != 3'b000)
+		RegPOINTTYPE_Signal = SC_RegPOINTTYPE_transitionDATA_InBUS;
 	else if (SC_RegPOINTTYPE_load0_InLow == 1'b0)
 		RegPOINTTYPE_Signal = SC_RegPOINTTYPE_data0_InBUS;
 	else if (SC_RegPOINTTYPE_load1_InLow == 1'b0)
