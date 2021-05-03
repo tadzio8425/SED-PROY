@@ -26,7 +26,8 @@ module SC_REG_GENERAL_NIVEL #(parameter RegNIVEL_DATAWIDTH=2'b00, parameter DATA
 	SC_RegNIVEL_RESET_InHigh,
 	SC_RegNIVEL_clear_InLow, 
 	SC_RegNIVEL_load_InLow, 
-	SC_RegNIVEL_data_InBUS
+	SC_RegNIVEL_data_InBUS,
+	SC_RegNIVEL_change_level_InLow
 );
 //=======================================================
 //  PARAMETER declarations
@@ -40,6 +41,7 @@ input		SC_RegNIVEL_CLOCK_50;
 input		SC_RegNIVEL_RESET_InHigh;
 input		SC_RegNIVEL_clear_InLow;
 input		SC_RegNIVEL_load_InLow;	
+input		SC_RegNIVEL_change_level_InLow;	
 input		[RegNIVEL_DATAWIDTH-1:0]	SC_RegNIVEL_data_InBUS;
 
 //=======================================================
@@ -57,6 +59,10 @@ begin
 		RegNIVEL_Signal = DATA_FIXED_INITREG;
 	else if (SC_RegNIVEL_load_InLow == 1'b0)
 		RegNIVEL_Signal = SC_RegNIVEL_data_InBUS;
+		
+	else if (SC_RegNIVEL_change_level_InLow == 1'b0)
+		RegNIVEL_Signal = RegNIVEL_Register + 2'b01;
+	
 	/*
 	else if (SC_RegNIVEL_shiftselection_In == 2'b01)
 		RegNIVEL_Signal = {RegNIVEL_Register[RegNIVEL_DATAWIDTH-2:0],RegNIVEL_Register[RegNIVEL_DATAWIDTH-1]}; */
