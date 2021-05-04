@@ -386,6 +386,8 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 
 
+set_global_assignment -name VERILOG_FILE rtl/CC_COLLISION_DETECTOR.v
+set_global_assignment -name VERILOG_FILE rtl/CC_NESTCHECK.v
 set_global_assignment -name VERILOG_FILE rtl/SC_REG_GENERAL_NIDOS.v
 set_global_assignment -name VERILOG_FILE rtl/SC_REG_GENERAL_PERDIO_VIDAS.v
 set_global_assignment -name VERILOG_FILE rtl/CC_BOTTOMSIDECOMPARATOR.v
