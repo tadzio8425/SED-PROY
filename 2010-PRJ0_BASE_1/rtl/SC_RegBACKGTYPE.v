@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8, parameter DATA_FIXED_INITREGBACKG=8'b00000000)(
+module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8, parameter DATA_FIXED_INITREGBACKG=8'b00000000, parameter FIRST_ROW_Low = 1'b1)(
 	//////////// OUTPUTS //////////
 	SC_RegBACKGTYPE_data_OutBUS,
 	//////////// INPUTS //////////
@@ -29,7 +29,9 @@ module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8, parameter DATA_FIXE
 	SC_RegBACKGTYPE_shiftselection_In,
 	SC_RegBACKGTYPE_data_InBUS,
 	SC_RegBACKTYPE_transition_InBUS,
-	SC_RegBACKTYPE_transitionDATA_InBUS
+	SC_RegBACKTYPE_transitionDATA_InBUS,
+	SC_RegBACKTYPE_NESTCHECK_left_InLow,
+	SC_RegBACKTYPE_NESTCHECK_right_InLow
 );
 //=======================================================
 //  PARAMETER declarations
@@ -48,6 +50,9 @@ input		[1:0] SC_RegBACKGTYPE_shiftselection_In;
 input		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_InBUS;
 input		[8-1:0] SC_RegBACKTYPE_transitionDATA_InBUS;
 
+input 	SC_RegBACKTYPE_NESTCHECK_left_InLow;
+input 	SC_RegBACKTYPE_NESTCHECK_right_InLow;
+
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -61,6 +66,13 @@ always @(*)
 begin
 	if (SC_RegBACKGTYPE_clear_InLow == 1'b0)
 		RegBACKGTYPE_Signal = DATA_FIXED_INITREGBACKG;
+		
+	else if (FIRST_ROW_Low == 1'b0 && SC_RegBACKTYPE_NESTCHECK_left_InLow == 1'b0)
+	
+		RegBACKGTYPE_Signal = 8'b11111011;
+		
+	else if (FIRST_ROW_Low == 1'b0 && SC_RegBACKTYPE_NESTCHECK_right_InLow == 1'b0)
+		RegBACKGTYPE_Signal = 8'b11011111;
 	
 	else if (SC_RegBACKTYPE_transition_InBUS != 3'b000)
 		RegBACKGTYPE_Signal = SC_RegBACKTYPE_transitionDATA_InBUS;

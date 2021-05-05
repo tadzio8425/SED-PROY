@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Tue May 04 17:30:56 2021
+Wed May 05 10:59:09 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -105,13 +105,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 04 17:30:56 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed May 05 10:59:09 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 488                                         ;
-;     Total combinational functions  ; 485                                         ;
+; Total logic elements               ; 538                                         ;
+;     Total combinational functions  ; 535                                         ;
 ;     Dedicated logic registers      ; 283                                         ;
 ; Total registers                    ; 283                                         ;
 ; Total pins                         ; 18                                          ;
@@ -223,8 +223,8 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.4%      ;
-;     Processor 3            ;   0.3%      ;
-;     Processor 4            ;   0.3%      ;
+;     Processor 3            ;   0.4%      ;
+;     Processor 4            ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -258,17 +258,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 488                      ;
+; Estimated Total logic elements              ; 538                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 485                      ;
+; Total combinational functions               ; 535                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 240                      ;
-;     -- 3 input functions                    ; 110                      ;
-;     -- <=2 input functions                  ; 135                      ;
+;     -- 4 input functions                    ; 279                      ;
+;     -- 3 input functions                    ; 119                      ;
+;     -- <=2 input functions                  ; 137                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 399                      ;
-;     -- arithmetic mode                      ; 86                       ;
+;     -- normal mode                          ; 448                      ;
+;     -- arithmetic mode                      ; 87                       ;
 ;                                             ;                          ;
 ; Total registers                             ; 283                      ;
 ;     -- Dedicated logic registers            ; 283                      ;
@@ -280,8 +280,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
 ; Maximum fan-out                             ; 283                      ;
-; Total fan-out                               ; 2820                     ;
-; Average fan-out                             ; 3.51                     ;
+; Total fan-out                               ; 2985                     ;
+; Average fan-out                             ; 3.50                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -290,26 +290,26 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name                 ; Library Name ;
 +-----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |BB_SYSTEM                                                      ; 485 (32)            ; 283 (0)                   ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |BB_SYSTEM                                                                                 ; BB_SYSTEM                   ; work         ;
-;    |CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0|             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0                                  ; CC_COLLISION_DETECTOR       ; work         ;
-;    |CC_NESTCHECK:CC_NESTCHECK_u0|                               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_NESTCHECK:CC_NESTCHECK_u0                                                    ; CC_NESTCHECK                ; work         ;
-;    |CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0|                   ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0                                        ; CC_SPEEDCOMPARATOR          ; work         ;
+; |BB_SYSTEM                                                      ; 535 (32)            ; 283 (0)                   ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |BB_SYSTEM                                                                                 ; BB_SYSTEM                   ; work         ;
+;    |CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0|             ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0                                  ; CC_COLLISION_DETECTOR       ; work         ;
+;    |CC_NESTCHECK:CC_NESTCHECK_u0|                               ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_NESTCHECK:CC_NESTCHECK_u0                                                    ; CC_NESTCHECK                ; work         ;
+;    |CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0|                   ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0                                        ; CC_SPEEDCOMPARATOR          ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u0|                               ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u0                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u1|                               ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u1                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u2|                               ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u2                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u3|                               ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u3                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u4|                               ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u4                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|               ; 3 (3)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0                                    ; SC_REG_GENERAL_NIDOS        ; work         ;
-;    |SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0|               ; 4 (4)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0                                    ; SC_REG_GENERAL_NIVEL        ; work         ;
-;    |SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0| ; 5 (5)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0                      ; SC_REG_GENERAL_PERDIO_VIDAS ; work         ;
+;    |SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0|               ; 3 (3)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0                                    ; SC_REG_GENERAL_NIVEL        ; work         ;
+;    |SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0| ; 4 (4)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0                      ; SC_REG_GENERAL_PERDIO_VIDAS ; work         ;
 ;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1                                              ; SC_RegBACKGTYPE             ; work         ;
 ;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2                                              ; SC_RegBACKGTYPE             ; work         ;
-;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3                                              ; SC_RegBACKGTYPE             ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|                         ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3                                              ; SC_RegBACKGTYPE             ; work         ;
 ;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5                                              ; SC_RegBACKGTYPE             ; work         ;
-;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|                         ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7                                              ; SC_RegBACKGTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|                         ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|                         ; 15 (15)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7                                              ; SC_RegBACKGTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|                         ; 15 (15)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0                                              ; SC_RegPOINTTYPE             ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|                         ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2                                              ; SC_RegPOINTTYPE             ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3                                              ; SC_RegPOINTTYPE             ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4                                              ; SC_RegPOINTTYPE             ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5                                              ; SC_RegPOINTTYPE             ; work         ;
@@ -317,8 +317,8 @@ https://fpgasoftware.intel.com/eula.
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|                         ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7                                              ; SC_RegPOINTTYPE             ; work         ;
 ;    |SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|               ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0                                    ; SC_STATEMACHINEBACKG        ; work         ;
 ;    |SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|               ; 13 (13)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0                                    ; SC_STATEMACHINEPOINT        ; work         ;
-;    |SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|               ; 14 (14)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0                                    ; SC_STATEMACHINE_MAIN        ; work         ;
-;    |SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|                     ; 23 (23)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0                                          ; SC_upSPEEDCOUNTER           ; work         ;
+;    |SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|               ; 15 (15)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0                                    ; SC_STATEMACHINE_MAIN        ; work         ;
+;    |SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|                     ; 46 (46)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0                                          ; SC_upSPEEDCOUNTER           ; work         ;
 ;    |matrix_ctrl:matrix_ctrl_unit_0|                             ; 125 (37)            ; 55 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0                                                  ; matrix_ctrl                 ; work         ;
 ;       |shift_reg_start_done:shift_reg_start_done_unit_0|        ; 88 (88)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ; shift_reg_start_done        ; work         ;
 +-----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
@@ -426,23 +426,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                                                             ; Reason for Removal                                                                    ;
 +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 ; matrix_ctrl:matrix_ctrl_unit_0|Trig_Register1                             ; Merged with matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~0                           ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[1..7]            ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[1]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[2]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[2]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[3]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[4]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[4]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[5]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[5]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[6]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[6]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[7]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[7]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[1]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[1]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[2]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[2]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[0]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[0]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[0]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[0]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[4]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[4]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[6]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[6]               ;
 ; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[7]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[7]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[6]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[6]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[4]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[4]               ;
 ; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[3]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[3]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[2]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[2]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[1]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[1]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[0]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[0]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[7]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[7]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[6]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[6]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[5]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[5]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[4]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[4]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[3]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[2]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[2]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[1]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]               ;
 ; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[5]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[5]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[0]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[0]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[1..7]            ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]               ;
 ; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]               ; Stuck at GND due to stuck port data_in                                                ;
 ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_RIGHT_0 ; Lost fanout                                                                           ;
 ; matrix_ctrl:matrix_ctrl_unit_0|state_reg~21                               ; Lost fanout                                                                           ;
@@ -491,31 +491,34 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Total registers                              ; 283   ;
 ; Number of registers using Synchronous Clear  ; 135   ;
-; Number of registers using Synchronous Load   ; 73    ;
+; Number of registers using Synchronous Load   ; 79    ;
 ; Number of registers using Asynchronous Clear ; 213   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 182   ;
+; Number of registers using Clock Enable       ; 154   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[12] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[12]   ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[3]    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0|RegNIVEL_Register[1]                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[0]      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|RegNIDOS_Register[1]                           ;
-; 4:1                ; 40 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[3]                                 ;
-; 6:1                ; 64 bits   ; 256 LEs       ; 192 LEs              ; 64 LEs                 ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[3]                                 ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[4]    ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|data_max[3]                                                                                 ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; 3:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |BB_SYSTEM|SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|upSPEEDCOUNTER_Register[9]                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[1] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[14]  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[11]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0|RegNIVEL_Register[0]                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[0]     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|RegNIDOS_Register[0]                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[1]                                ;
+; 6:1                ; 64 bits   ; 256 LEs       ; 192 LEs              ; 64 LEs                 ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[6]                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[5]                                ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[4]   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Signal                                     ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|data_max[0]                                                                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -700,11 +703,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0 ;
-+--------------------------+-------+--------------------------------------------------+
-; Parameter Name           ; Value ; Type                                             ;
-+--------------------------+-------+--------------------------------------------------+
-; upSPEEDCOUNTER_DATAWIDTH ; 23    ; Signed Integer                                   ;
-+--------------------------+-------+--------------------------------------------------+
++--------------------------+-------------------------+--------------------------------+
+; Parameter Name           ; Value                   ; Type                           ;
++--------------------------+-------------------------+--------------------------------+
+; upSPEEDCOUNTER_DATAWIDTH ; 23                      ; Signed Integer                 ;
+; upSPEEDCOUNTER_INIT      ; 00000000000000000000000 ; Unsigned Binary                ;
++--------------------------+-------------------------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -725,6 +729,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 11011011 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 0        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -736,6 +741,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 1        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -747,6 +753,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 1        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -758,6 +765,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 11100000 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 1        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -769,6 +777,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 1        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -780,6 +789,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 11100000 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 1        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -791,6 +801,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 1        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -802,6 +813,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+----------+--------------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
 ; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
+; FIRST_ROW_Low           ; 1        ; Unsigned Binary                            ;
 +-------------------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1091,25 +1103,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 18                          ;
 ; cycloneiii_ff         ; 283                         ;
-;     CLR               ; 31                          ;
-;     ENA CLR           ; 92                          ;
+;     CLR               ; 53                          ;
+;     CLR SLD           ; 6                           ;
+;     ENA CLR           ; 64                          ;
 ;     ENA CLR SCLR      ; 17                          ;
 ;     ENA CLR SCLR SLD  ; 63                          ;
 ;     ENA CLR SLD       ; 10                          ;
 ;     SCLR              ; 55                          ;
 ;     plain             ; 15                          ;
-; cycloneiii_lcell_comb ; 487                         ;
-;     arith             ; 86                          ;
-;         2 data inputs ; 85                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 401                         ;
+; cycloneiii_lcell_comb ; 537                         ;
+;     arith             ; 87                          ;
+;         2 data inputs ; 87                          ;
+;     normal            ; 450                         ;
 ;         1 data inputs ; 12                          ;
 ;         2 data inputs ; 40                          ;
-;         3 data inputs ; 109                         ;
-;         4 data inputs ; 240                         ;
+;         3 data inputs ; 119                         ;
+;         4 data inputs ; 279                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.10                        ;
+; Average LUT depth     ; 3.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1118,7 +1130,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1128,7 +1140,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue May 04 17:30:32 2021
+    Info: Processing started: Wed May 05 10:58:57 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_collision_detector.v
@@ -1168,26 +1180,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file cc_spee
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_reg_general_nivel.v
     Info (12023): Found entity 1: SC_REG_GENERAL_NIVEL File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_NIVEL.v Line: 21
 Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Info (12128): Elaborating entity "SC_DEBOUNCE1" for hierarchy "SC_DEBOUNCE1:SC_DEBOUNCE1_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 231
+Info (12128): Elaborating entity "SC_DEBOUNCE1" for hierarchy "SC_DEBOUNCE1:SC_DEBOUNCE1_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 234
 Warning (10230): Verilog HDL assignment warning at SC_DEBOUNCE1.v(70): truncated value with size 32 to match size of target (11) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_DEBOUNCE1.v Line: 70
-Info (12128): Elaborating entity "SC_RegPOINTTYPE" for hierarchy "SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 285
-Info (12128): Elaborating entity "SC_RegPOINTTYPE" for hierarchy "SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 383
-Info (12128): Elaborating entity "SC_STATEMACHINEPOINT" for hierarchy "SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 399
+Info (12128): Elaborating entity "SC_RegPOINTTYPE" for hierarchy "SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 290
+Info (12128): Elaborating entity "SC_RegPOINTTYPE" for hierarchy "SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 402
+Info (12128): Elaborating entity "SC_STATEMACHINEPOINT" for hierarchy "SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 418
 Info (10264): Verilog HDL Case Statement information at SC_STATEMACHINEPOINT.v(116): all case item expressions in this case statement are onehot File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINEPOINT.v Line: 116
-Info (12128): Elaborating entity "SC_REG_GENERAL_NIVEL" for hierarchy "SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 420
-Info (12128): Elaborating entity "SC_upSPEEDCOUNTER" for hierarchy "SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 432
-Info (12128): Elaborating entity "CC_SPEEDCOMPARATOR" for hierarchy "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 439
-Info (12128): Elaborating entity "SC_STATEMACHINE_MAIN" for hierarchy "SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 458
-Info (12128): Elaborating entity "SC_STATEMACHINEBACKG" for hierarchy "SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 471
-Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 638
-Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 650
-Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 674
-Info (12128): Elaborating entity "CC_BOTTOMSIDECOMPARATOR" for hierarchy "CC_BOTTOMSIDECOMPARATOR:CC_BOTTOMSIDECOMPARATOR_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 732
-Info (12128): Elaborating entity "SC_REG_GENERAL_PERDIO_VIDAS" for hierarchy "SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 751
-Info (12128): Elaborating entity "SC_REG_GENERAL_NIDOS" for hierarchy "SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 767
-Info (12128): Elaborating entity "CC_COLLISION_DETECTOR" for hierarchy "CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 796
-Info (12128): Elaborating entity "CC_NESTCHECK" for hierarchy "CC_NESTCHECK:CC_NESTCHECK_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 805
-Info (12128): Elaborating entity "matrix_ctrl" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 841
+Info (12128): Elaborating entity "SC_REG_GENERAL_NIVEL" for hierarchy "SC_REG_GENERAL_NIVEL:SC_REG_GENERAL_NIVEL_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 439
+Info (12128): Elaborating entity "SC_upSPEEDCOUNTER" for hierarchy "SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 452
+Info (12128): Elaborating entity "CC_SPEEDCOMPARATOR" for hierarchy "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 459
+Info (12128): Elaborating entity "SC_STATEMACHINE_MAIN" for hierarchy "SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 478
+Info (12128): Elaborating entity "SC_STATEMACHINEBACKG" for hierarchy "SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 491
+Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 662
+Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 676
+Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 704
+Info (12128): Elaborating entity "CC_BOTTOMSIDECOMPARATOR" for hierarchy "CC_BOTTOMSIDECOMPARATOR:CC_BOTTOMSIDECOMPARATOR_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 770
+Info (12128): Elaborating entity "SC_REG_GENERAL_PERDIO_VIDAS" for hierarchy "SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 789
+Info (12128): Elaborating entity "SC_REG_GENERAL_NIDOS" for hierarchy "SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 805
+Info (12128): Elaborating entity "CC_COLLISION_DETECTOR" for hierarchy "CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 834
+Info (12128): Elaborating entity "CC_NESTCHECK" for hierarchy "CC_NESTCHECK:CC_NESTCHECK_u0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 846
+Info (12128): Elaborating entity "matrix_ctrl" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0" File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 882
 Warning (10036): Verilog HDL or VHDL warning at max7219_ctrl.v(58): object "Trig_SignalNEG" assigned a value but never read File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 58
 Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(50): truncated value with size 32 to match size of target (4) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 50
 Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(51): truncated value with size 32 to match size of target (4) File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/max7219_ctrl.v Line: 51
@@ -1204,15 +1216,15 @@ Info (17049): 19 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 506 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 556 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 488 logic cells
+    Info (21061): Implemented 538 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4781 megabytes
-    Info: Processing ended: Tue May 04 17:30:56 2021
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Peak virtual memory: 4763 megabytes
+    Info: Processing ended: Wed May 05 10:59:09 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+
