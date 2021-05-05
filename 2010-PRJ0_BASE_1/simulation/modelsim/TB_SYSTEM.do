@@ -4,8 +4,9 @@ quietly WaveActivateNextPane {} 0
 delete wave *
 add wave -noupdate /TB_SYSTEM/eachvec
 
-add wave -divider STATE_MACHINE
+add wave -divider STATE_MACHINES
 add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_STATEMACHINE_MAIN_u0/STATE_Register
+
 
 
 add wave  -divider LedMATRIX
@@ -14,7 +15,8 @@ add wave -noupdate /TB_SYSTEM/TB_SYSTEM_RESET_InHigh
 add wave -noupdate /TB_SYSTEM/TB_SYSTEM_startButton_InLow
 add wave -noupdate /TB_SYSTEM/TB_SYSTEM_leftButton_InLow
 add wave -noupdate /TB_SYSTEM/TB_SYSTEM_rightButton_InLow
-
+add wave -noupdate /TB_SYSTEM/TB_SYSTEM_upButton_InLow
+add wave -noupdate /TB_SYSTEM/TB_SYSTEM_downButton_InLow
 
 
 add wave -divider DISPLAY
@@ -34,6 +36,15 @@ add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_upSPEEDCOUNTER_u0/upSPEEDCOUNTER_R
 add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/CC_SPEEDCOMPARATOR_u0/CC_SPEEDCOMPARATOR_T0_OutLow
 
 
+add wave -divider CONTROL_VARIABLES
+
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/CC_COLLISION_DETECTOR_u0/CC_COLLISION_DETECTOR_OutLow
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/CC_NESTCHECK_u0/CC_NESTCHECK_OutLow
+
+add wave -divider CONTROL_REGISTERS
+
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_REG_GENERAL_PERDIO_VIDAS_u0/RegPERDIO_VIDAS_Register
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_REG_GENERAL_NIDOS_u0/RegNIDOS_Register
 add wave -divider POINT
 add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data7_Out
 add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data6_Out

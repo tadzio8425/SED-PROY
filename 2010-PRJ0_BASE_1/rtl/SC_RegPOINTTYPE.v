@@ -93,7 +93,7 @@ begin
 always @(posedge SC_RegPOINTTYPE_CLOCK_50, posedge SC_RegPOINTTYPE_RESET_InHigh)
 begin
 	if (SC_RegPOINTTYPE_RESET_InHigh == 1'b1)
-		RegPOINTTYPE_Register <= 8'b00000000;
+		RegPOINTTYPE_Register <= 0;
 	else
 		RegPOINTTYPE_Register <= RegPOINTTYPE_Signal;
 end

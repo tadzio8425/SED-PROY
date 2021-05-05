@@ -1,5 +1,5 @@
 Fitter report for BB_SYSTEM
-Wed May 05 15:14:02 2021
+Wed May 05 17:27:12 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -69,17 +69,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed May 05 15:14:02 2021       ;
+; Fitter Status                      ; Successful - Wed May 05 17:27:12 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 520 / 22,320 ( 2 % )                        ;
-;     Total combinational functions  ; 510 / 22,320 ( 2 % )                        ;
-;     Dedicated logic registers      ; 279 / 22,320 ( 1 % )                        ;
-; Total registers                    ; 279                                         ;
+; Total logic elements               ; 669 / 22,320 ( 3 % )                        ;
+;     Total combinational functions  ; 661 / 22,320 ( 3 % )                        ;
+;     Dedicated logic registers      ; 280 / 22,320 ( 1 % )                        ;
+; Total registers                    ; 280                                         ;
 ; Total pins                         ; 18 / 154 ( 12 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -161,9 +161,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.2%      ;
+;     Processor 2            ;   1.1%      ;
 ;     Processor 3            ;   1.1%      ;
-;     Processor 4            ;   1.1%      ;
+;     Processor 4            ;   1.0%      ;
 +----------------------------+-------------+
 
 
@@ -203,8 +203,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 837 ) ; 0.00 % ( 0 / 837 )         ; 0.00 % ( 0 / 837 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 837 ) ; 0.00 % ( 0 / 837 )         ; 0.00 % ( 0 / 837 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 989 ) ; 0.00 % ( 0 / 989 )         ; 0.00 % ( 0 / 989 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 989 ) ; 0.00 % ( 0 / 989 )         ; 0.00 % ( 0 / 989 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -227,7 +227,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 827 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 979 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -243,26 +243,26 @@ The pin-out file can be found in C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_
 +---------------------------------------------+----------------------+
 ; Resource                                    ; Usage                ;
 +---------------------------------------------+----------------------+
-; Total logic elements                        ; 520 / 22,320 ( 2 % ) ;
-;     -- Combinational with no register       ; 241                  ;
-;     -- Register only                        ; 10                   ;
-;     -- Combinational with a register        ; 269                  ;
+; Total logic elements                        ; 669 / 22,320 ( 3 % ) ;
+;     -- Combinational with no register       ; 389                  ;
+;     -- Register only                        ; 8                    ;
+;     -- Combinational with a register        ; 272                  ;
 ;                                             ;                      ;
 ; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 226                  ;
-;     -- 3 input functions                    ; 130                  ;
-;     -- <=2 input functions                  ; 154                  ;
-;     -- Register only                        ; 10                   ;
+;     -- 4 input functions                    ; 376                  ;
+;     -- 3 input functions                    ; 64                   ;
+;     -- <=2 input functions                  ; 221                  ;
+;     -- Register only                        ; 8                    ;
 ;                                             ;                      ;
 ; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 423                  ;
+;     -- normal mode                          ; 574                  ;
 ;     -- arithmetic mode                      ; 87                   ;
 ;                                             ;                      ;
-; Total registers*                            ; 279 / 23,018 ( 1 % ) ;
-;     -- Dedicated logic registers            ; 279 / 22,320 ( 1 % ) ;
+; Total registers*                            ; 280 / 23,018 ( 1 % ) ;
+;     -- Dedicated logic registers            ; 280 / 22,320 ( 1 % ) ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )      ;
 ;                                             ;                      ;
-; Total LABs:  partially or completely used   ; 43 / 1,395 ( 3 % )   ;
+; Total LABs:  partially or completely used   ; 46 / 1,395 ( 3 % )   ;
 ; Virtual pins                                ; 0                    ;
 ; I/O pins                                    ; 18 / 154 ( 12 % )    ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )       ;
@@ -280,12 +280,12 @@ The pin-out file can be found in C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )        ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )        ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )        ;
-; Average interconnect usage (total/H/V)      ; 0.8% / 0.7% / 0.9%   ;
-; Peak interconnect usage (total/H/V)         ; 5.5% / 5.2% / 5.9%   ;
-; Maximum fan-out                             ; 278                  ;
-; Highest non-global fan-out                  ; 274                  ;
-; Total fan-out                               ; 2834                 ;
-; Average fan-out                             ; 3.35                 ;
+; Average interconnect usage (total/H/V)      ; 0.7% / 0.7% / 0.7%   ;
+; Peak interconnect usage (total/H/V)         ; 3.0% / 2.6% / 3.8%   ;
+; Maximum fan-out                             ; 279                  ;
+; Highest non-global fan-out                  ; 275                  ;
+; Total fan-out                               ; 3182                 ;
+; Average fan-out                             ; 3.19                 ;
 +---------------------------------------------+----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -298,26 +298,26 @@ The pin-out file can be found in C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_
 +---------------------------------------------+---------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                 ; Low                            ;
 ;                                             ;                     ;                                ;
-; Total logic elements                        ; 520 / 22320 ( 2 % ) ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 241                 ; 0                              ;
-;     -- Register only                        ; 10                  ; 0                              ;
-;     -- Combinational with a register        ; 269                 ; 0                              ;
+; Total logic elements                        ; 669 / 22320 ( 3 % ) ; 0 / 22320 ( 0 % )              ;
+;     -- Combinational with no register       ; 389                 ; 0                              ;
+;     -- Register only                        ; 8                   ; 0                              ;
+;     -- Combinational with a register        ; 272                 ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic element usage by number of LUT inputs ;                     ;                                ;
-;     -- 4 input functions                    ; 226                 ; 0                              ;
-;     -- 3 input functions                    ; 130                 ; 0                              ;
-;     -- <=2 input functions                  ; 154                 ; 0                              ;
-;     -- Register only                        ; 10                  ; 0                              ;
+;     -- 4 input functions                    ; 376                 ; 0                              ;
+;     -- 3 input functions                    ; 64                  ; 0                              ;
+;     -- <=2 input functions                  ; 221                 ; 0                              ;
+;     -- Register only                        ; 8                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic elements by mode                      ;                     ;                                ;
-;     -- normal mode                          ; 423                 ; 0                              ;
+;     -- normal mode                          ; 574                 ; 0                              ;
 ;     -- arithmetic mode                      ; 87                  ; 0                              ;
 ;                                             ;                     ;                                ;
-; Total registers                             ; 279                 ; 0                              ;
-;     -- Dedicated logic registers            ; 279 / 22320 ( 1 % ) ; 0 / 22320 ( 0 % )              ;
+; Total registers                             ; 280                 ; 0                              ;
+;     -- Dedicated logic registers            ; 280 / 22320 ( 1 % ) ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
-; Total LABs:  partially or completely used   ; 43 / 1395 ( 3 % )   ; 0 / 1395 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 46 / 1395 ( 3 % )   ; 0 / 1395 ( 0 % )               ;
 ;                                             ;                     ;                                ;
 ; Virtual pins                                ; 0                   ; 0                              ;
 ; I/O pins                                    ; 18                  ; 0                              ;
@@ -333,8 +333,8 @@ The pin-out file can be found in C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_
 ;     -- Registered Output Connections        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 2829                ; 5                              ;
-;     -- Registered Connections               ; 1121                ; 0                              ;
+;     -- Total Connections                    ; 3177                ; 5                              ;
+;     -- Registered Connections               ; 1133                ; 0                              ;
 ;                                             ;                     ;                                ;
 ; External Connections                        ;                     ;                                ;
 ;     -- Top                                  ; 0                   ; 0                              ;
@@ -366,8 +366,8 @@ The pin-out file can be found in C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_
 +-----------------------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name                        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-----------------------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; BB_SYSTEM_CLOCK_50          ; R8    ; 3        ; 27           ; 0            ; 21           ; 279                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
-; BB_SYSTEM_RESET_InHigh      ; N15   ; 5        ; 53           ; 9            ; 14           ; 274                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
+; BB_SYSTEM_CLOCK_50          ; R8    ; 3        ; 27           ; 0            ; 21           ; 280                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
+; BB_SYSTEM_RESET_InHigh      ; N15   ; 5        ; 53           ; 9            ; 14           ; 275                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
 ; BB_SYSTEM_downButton_InLow  ; D8    ; 8        ; 23           ; 34           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
 ; BB_SYSTEM_leftButton_InLow  ; F9    ; 7        ; 34           ; 34           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
 ; BB_SYSTEM_rightButton_InLow ; E8    ; 8        ; 20           ; 34           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
@@ -726,36 +726,36 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                                      ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                        ; Entity Name                 ; Library Name ;
 +-----------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |BB_SYSTEM                                                      ; 520 (32)    ; 279 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 18   ; 0            ; 241 (32)     ; 10 (0)            ; 269 (0)          ; |BB_SYSTEM                                                                                 ; BB_SYSTEM                   ; work         ;
-;    |CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0|             ; 15 (15)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; |BB_SYSTEM|CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0                                  ; CC_COLLISION_DETECTOR       ; work         ;
-;    |CC_NESTCHECK:CC_NESTCHECK_u0|                               ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 1 (1)            ; |BB_SYSTEM|CC_NESTCHECK:CC_NESTCHECK_u0                                                    ; CC_NESTCHECK                ; work         ;
+; |BB_SYSTEM                                                      ; 669 (32)    ; 280 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 18   ; 0            ; 389 (32)     ; 8 (0)             ; 272 (0)          ; |BB_SYSTEM                                                                                 ; BB_SYSTEM                   ; work         ;
+;    |CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0|             ; 36 (36)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (36)      ; 0 (0)             ; 0 (0)            ; |BB_SYSTEM|CC_COLLISION_DETECTOR:CC_COLLISION_DETECTOR_u0                                  ; CC_COLLISION_DETECTOR       ; work         ;
+;    |CC_NESTCHECK:CC_NESTCHECK_u0|                               ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; |BB_SYSTEM|CC_NESTCHECK:CC_NESTCHECK_u0                                                    ; CC_NESTCHECK                ; work         ;
 ;    |CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0|                   ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |BB_SYSTEM|CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0                                        ; CC_SPEEDCOMPARATOR          ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u0|                               ; 26 (26)     ; 14 (14)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 14 (14)          ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u0                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u1|                               ; 26 (26)     ; 14 (14)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 14 (14)          ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u1                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u2|                               ; 26 (26)     ; 14 (14)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 14 (14)          ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u2                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u3|                               ; 26 (26)     ; 14 (14)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 14 (14)          ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u3                                                    ; SC_DEBOUNCE1                ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u4|                               ; 26 (26)     ; 14 (14)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 14 (14)          ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u4                                                    ; SC_DEBOUNCE1                ; work         ;
-;    |SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|               ; 3 (3)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (2)            ; |BB_SYSTEM|SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0                                    ; SC_REG_GENERAL_NIDOS        ; work         ;
+;    |SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|               ; 5 (5)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 2 (2)            ; |BB_SYSTEM|SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0                                    ; SC_REG_GENERAL_NIDOS        ; work         ;
 ;    |SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0| ; 3 (3)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (2)            ; |BB_SYSTEM|SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0                      ; SC_REG_GENERAL_PERDIO_VIDAS ; work         ;
 ;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1                                              ; SC_RegBACKGTYPE             ; work         ;
-;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|                         ; 11 (11)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2                                              ; SC_RegBACKGTYPE             ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2                                              ; SC_RegBACKGTYPE             ; work         ;
 ;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3                                              ; SC_RegBACKGTYPE             ; work         ;
-;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5                                              ; SC_RegBACKGTYPE             ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|                         ; 10 (10)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5                                              ; SC_RegBACKGTYPE             ; work         ;
 ;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|                         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7                                              ; SC_RegBACKGTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|                         ; 16 (16)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 9 (9)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6                                              ; SC_RegPOINTTYPE             ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|                         ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|                         ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|                         ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|                         ; 33 (33)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 11 (11)          ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|                         ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|                         ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|                         ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|                         ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6                                              ; SC_RegPOINTTYPE             ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|                         ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7                                              ; SC_RegPOINTTYPE             ; work         ;
 ;    |SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|               ; 6 (6)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (6)            ; |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0                                    ; SC_STATEMACHINEBACKG        ; work         ;
-;    |SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|               ; 13 (13)     ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 6 (6)            ; |BB_SYSTEM|SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0                                    ; SC_STATEMACHINEPOINT        ; work         ;
-;    |SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|               ; 19 (19)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 4 (4)             ; 12 (12)          ; |BB_SYSTEM|SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0                                    ; SC_STATEMACHINE_MAIN        ; work         ;
+;    |SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|               ; 14 (14)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 7 (7)            ; |BB_SYSTEM|SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0                                    ; SC_STATEMACHINEPOINT        ; work         ;
+;    |SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|               ; 19 (19)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 2 (2)             ; 14 (14)          ; |BB_SYSTEM|SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0                                    ; SC_STATEMACHINE_MAIN        ; work         ;
 ;    |SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|                     ; 48 (48)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 23 (23)          ; |BB_SYSTEM|SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0                                          ; SC_upSPEEDCOUNTER           ; work         ;
-;    |matrix_ctrl:matrix_ctrl_unit_0|                             ; 131 (38)    ; 55 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (15)      ; 6 (1)             ; 49 (22)          ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0                                                  ; matrix_ctrl                 ; work         ;
-;       |shift_reg_start_done:shift_reg_start_done_unit_0|        ; 93 (93)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 61 (61)      ; 5 (5)             ; 27 (27)          ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ; shift_reg_start_done        ; work         ;
+;    |matrix_ctrl:matrix_ctrl_unit_0|                             ; 131 (39)    ; 55 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (16)      ; 6 (1)             ; 49 (21)          ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0                                                  ; matrix_ctrl                 ; work         ;
+;       |shift_reg_start_done:shift_reg_start_done_unit_0|        ; 93 (93)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 60 (60)      ; 5 (5)             ; 28 (28)          ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ; shift_reg_start_done        ; work         ;
 +-----------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -780,8 +780,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BB_SYSTEM_RESET_InHigh      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; BB_SYSTEM_startButton_InLow ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; BB_SYSTEM_leftButton_InLow  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; BB_SYSTEM_rightButton_InLow ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; BB_SYSTEM_upButton_InLow    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; BB_SYSTEM_rightButton_InLow ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; BB_SYSTEM_upButton_InLow    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; BB_SYSTEM_downButton_InLow  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +-----------------------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -885,69 +885,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[13] ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[14] ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[15] ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|state_reg.UPDATE_FRAME                                       ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|cur_col_reg[3]                                               ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|cur_col_reg[0]                                               ; 0                 ; 6       ;
@@ -975,68 +912,128 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - SC_DEBOUNCE1:SC_DEBOUNCE1_u4|DFF1~0                                                         ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[7]    ; 0                 ; 6       ;
 ;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[6]    ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_UP_0                      ; 0                 ; 6       ;
+;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_LEFT_0                    ; 0                 ; 6       ;
+;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_DOWN_0                    ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[2]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[3]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[4]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[7]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[0]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
+;      - SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[6]                                 ; 0                 ; 6       ;
+;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.ESTADO_CAMBIO_NIVEL_1           ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.ESTADO_CAMBIO_NIVEL_3           ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.ESTADO_FINAL                    ; 0                 ; 6       ;
-;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_DOWN_0                    ; 0                 ; 6       ;
-;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_UP_0                      ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[0]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[7]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[6]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[5]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[4]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[3]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[2]                                 ; 0                 ; 6       ;
-;      - SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[1]                                 ; 0                 ; 6       ;
+;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.FROG_RESET_3                    ; 0                 ; 6       ;
+;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.FROG_RESET_4                    ; 0                 ; 6       ;
 ;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_INIT_0                    ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.FROG_RESET_1                    ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.FROG_RESET_2                    ; 0                 ; 6       ;
-;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.FROG_RESET_3                    ; 0                 ; 6       ;
-;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.FROG_RESET_4                    ; 0                 ; 6       ;
-;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_LEFT_0                    ; 0                 ; 6       ;
+;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_RIGHT_0                   ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[5]    ; 0                 ; 6       ;
+;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_CHECK_0                   ; 0                 ; 6       ;
+;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_INIT_0                    ; 0                 ; 6       ;
+;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_SHIFT_0                   ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.STATE_INIT_0                    ; 0                 ; 6       ;
 ;      - SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|RegNIDOS_Register[1]                           ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.NIVEL_2                         ; 0                 ; 6       ;
 ;      - SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|RegNIDOS_Register[0]                           ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.NIVEL_4                         ; 0                 ; 6       ;
-;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_CHECK_0                   ; 0                 ; 6       ;
-;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_INIT_0                    ; 0                 ; 6       ;
-;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_SHIFT_0                   ; 0                 ; 6       ;
-;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.ESTADO_CAMBIO_NIVEL_2           ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.ESTADO_CAMBIO_NIVEL_4           ; 0                 ; 6       ;
+;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.ESTADO_CAMBIO_NIVEL_2           ; 0                 ; 6       ;
 ;      - matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[4]    ; 0                 ; 6       ;
-;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.STATE_CHECK_0                   ; 0                 ; 6       ;
-;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.STATE_START_0                   ; 0                 ; 6       ;
-;      - SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[0]      ; 0                 ; 6       ;
-;      - SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[1]      ; 0                 ; 6       ;
 ;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_START_0                   ; 0                 ; 6       ;
 ;      - SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_CHECK_1                   ; 0                 ; 6       ;
 ;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_CHECK_0                   ; 0                 ; 6       ;
@@ -1063,8 +1060,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|upSPEEDCOUNTER_Register[3]                           ; 0                 ; 6       ;
 ;      - SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|upSPEEDCOUNTER_Register[1]                           ; 0                 ; 6       ;
 ;      - SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|upSPEEDCOUNTER_Register[2]                           ; 0                 ; 6       ;
-;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.NIVEL_1                         ; 0                 ; 6       ;
+;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.STATE_CHECK_0                   ; 0                 ; 6       ;
+;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.STATE_START_0                   ; 0                 ; 6       ;
+;      - SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[0]      ; 0                 ; 6       ;
+;      - SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[1]      ; 0                 ; 6       ;
 ;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.NIVEL_3                         ; 0                 ; 6       ;
+;      - SC_STATEMACHINE_MAIN:SC_STATEMACHINE_MAIN_u0|STATE_Register.NIVEL_1                         ; 0                 ; 6       ;
 ;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_COUNT_0                   ; 0                 ; 6       ;
 ;      - SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_CHECK_1                   ; 0                 ; 6       ;
 ; BB_SYSTEM_startButton_InLow                                                                        ;                   ;         ;
@@ -1072,9 +1073,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BB_SYSTEM_leftButton_InLow                                                                         ;                   ;         ;
 ;      - SC_DEBOUNCE1:SC_DEBOUNCE1_u1|DFF1~0                                                         ; 0                 ; 6       ;
 ; BB_SYSTEM_rightButton_InLow                                                                        ;                   ;         ;
-;      - SC_DEBOUNCE1:SC_DEBOUNCE1_u2|DFF1~0                                                         ; 1                 ; 6       ;
+;      - SC_DEBOUNCE1:SC_DEBOUNCE1_u2|DFF1~0                                                         ; 0                 ; 6       ;
 ; BB_SYSTEM_upButton_InLow                                                                           ;                   ;         ;
-;      - SC_DEBOUNCE1:SC_DEBOUNCE1_u3|DFF1~0                                                         ; 1                 ; 6       ;
+;      - SC_DEBOUNCE1:SC_DEBOUNCE1_u3|DFF1~0                                                         ; 0                 ; 6       ;
 ; BB_SYSTEM_downButton_InLow                                                                         ;                   ;         ;
 ;      - SC_DEBOUNCE1:SC_DEBOUNCE1_u4|DFF1~0                                                         ; 0                 ; 6       ;
 +----------------------------------------------------------------------------------------------------+-------------------+---------+
@@ -1086,32 +1087,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                          ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; BB_SYSTEM_CLOCK_50                                                                            ; PIN_R8             ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; BB_SYSTEM_CLOCK_50                                                                            ; PIN_R8             ; 278     ; Clock                     ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; BB_SYSTEM_RESET_InHigh                                                                        ; PIN_N15            ; 274     ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|RegNIDOS_Register[0]~0                           ; LCCOMB_X34_Y21_N30 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[0]~0      ; LCCOMB_X35_Y21_N22 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[4]~2                                 ; LCCOMB_X32_Y18_N16 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[3]~11                                ; LCCOMB_X34_Y20_N18 ; 64      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[3]~12                                ; LCCOMB_X34_Y20_N2  ; 63      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_INIT_0                      ; FF_X45_Y15_N1      ; 18      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_UP_0                        ; FF_X37_Y20_N11     ; 66      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; matrix_ctrl:matrix_ctrl_unit_0|Trig_SignalPOS                                                 ; LCCOMB_X32_Y12_N12 ; 34      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; matrix_ctrl:matrix_ctrl_unit_0|ctrl_sr[1]                                                     ; LCCOMB_X30_Y8_N24  ; 21      ; Sync. clear, Sync. load   ; no     ; --                   ; --               ; --                        ;
-; matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[6]~50 ; LCCOMB_X34_Y16_N6  ; 16      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[15]~1   ; LCCOMB_X32_Y12_N22 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP                                            ; FF_X28_Y1_N31      ; 2       ; Latch enable              ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg~47                                                   ; LCCOMB_X32_Y12_N8  ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; BB_SYSTEM_CLOCK_50                                                                            ; PIN_R8             ; 279     ; Clock                     ; yes    ; Global Clock         ; GCLK18           ; --                        ;
+; BB_SYSTEM_RESET_InHigh                                                                        ; PIN_N15            ; 275     ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; SC_REG_GENERAL_NIDOS:SC_REG_GENERAL_NIDOS_u0|RegNIDOS_Register[0]~2                           ; LCCOMB_X31_Y20_N0  ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SC_REG_GENERAL_PERDIO_VIDAS:SC_REG_GENERAL_PERDIO_VIDAS_u0|RegPERDIO_VIDAS_Register[0]~0      ; LCCOMB_X29_Y22_N14 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[7]~1                                 ; LCCOMB_X35_Y23_N14 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[4]~8                                 ; LCCOMB_X29_Y22_N8  ; 64      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register.STATE_INIT_0                      ; FF_X37_Y19_N17     ; 18      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; matrix_ctrl:matrix_ctrl_unit_0|Trig_SignalPOS                                                 ; LCCOMB_X30_Y22_N22 ; 34      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; matrix_ctrl:matrix_ctrl_unit_0|ctrl_sr[1]                                                     ; LCCOMB_X28_Y22_N12 ; 21      ; Sync. clear, Sync. load   ; no     ; --                   ; --               ; --                        ;
+; matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[6]~50 ; LCCOMB_X30_Y19_N22 ; 16      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[15]~1   ; LCCOMB_X30_Y19_N26 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP                                            ; FF_X28_Y20_N11     ; 2       ; Latch enable              ; yes    ; Global Clock         ; GCLK14           ; --                        ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~47                                                   ; LCCOMB_X28_Y20_N14 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                               ;
-+----------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                               ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; BB_SYSTEM_CLOCK_50                                 ; PIN_R8        ; 278     ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
-; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP ; FF_X28_Y1_N31 ; 2       ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
-+----------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                ;
++----------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                               ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; BB_SYSTEM_CLOCK_50                                 ; PIN_R8         ; 279     ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP ; FF_X28_Y20_N11 ; 2       ; 0                                    ; Global Clock         ; GCLK14           ; --                        ;
++----------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +------------------------------------------------+
@@ -1119,51 +1118,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 633 / 71,559 ( < 1 % ) ;
-; C16 interconnects     ; 24 / 2,597 ( < 1 % )   ;
-; C4 interconnects      ; 398 / 46,848 ( < 1 % ) ;
-; Direct links          ; 146 / 71,559 ( < 1 % ) ;
+; Block interconnects   ; 791 / 71,559 ( 1 % )   ;
+; C16 interconnects     ; 13 / 2,597 ( < 1 % )   ;
+; C4 interconnects      ; 335 / 46,848 ( < 1 % ) ;
+; Direct links          ; 174 / 71,559 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )        ;
-; Local interconnects   ; 328 / 24,624 ( 1 % )   ;
-; R24 interconnects     ; 14 / 2,496 ( < 1 % )   ;
-; R4 interconnects      ; 384 / 62,424 ( < 1 % ) ;
+; Local interconnects   ; 413 / 24,624 ( 2 % )   ;
+; R24 interconnects     ; 12 / 2,496 ( < 1 % )   ;
+; R4 interconnects      ; 414 / 62,424 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.09) ; Number of LABs  (Total = 43) ;
+; Number of Logic Elements  (Average = 14.54) ; Number of LABs  (Total = 46) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 5                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 2                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 5                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 1                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 4                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 0                            ;
 ; 13                                          ; 1                            ;
-; 14                                          ; 3                            ;
-; 15                                          ; 6                            ;
-; 16                                          ; 18                           ;
+; 14                                          ; 0                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 35                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.37) ; Number of LABs  (Total = 43) ;
+; LAB-wide Signals  (Average = 2.17) ; Number of LABs  (Total = 46) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 27                           ;
-; 1 Clock                            ; 36                           ;
-; 1 Clock enable                     ; 15                           ;
-; 1 Sync. clear                      ; 16                           ;
-; 1 Sync. load                       ; 6                            ;
+; 1 Async. clear                     ; 30                           ;
+; 1 Clock                            ; 38                           ;
+; 1 Clock enable                     ; 20                           ;
+; 1 Sync. clear                      ; 10                           ;
 ; 2 Clock enables                    ; 1                            ;
 ; 2 Clocks                           ; 1                            ;
 +------------------------------------+------------------------------+
@@ -1172,106 +1170,111 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 18.56) ; Number of LABs  (Total = 43) ;
+; Number of Signals Sourced  (Average = 20.61) ; Number of LABs  (Total = 46) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 4                            ;
+; 1                                            ; 0                            ;
 ; 2                                            ; 1                            ;
-; 3                                            ; 2                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
+; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 0                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 4                            ;
+; 17                                           ; 2                            ;
 ; 18                                           ; 1                            ;
 ; 19                                           ; 8                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 7                            ;
-; 22                                           ; 4                            ;
-; 23                                           ; 1                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 8                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 3                            ;
 ; 24                                           ; 1                            ;
 ; 25                                           ; 1                            ;
-; 26                                           ; 3                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 0                            ;
-; 29                                           ; 2                            ;
-; 30                                           ; 0                            ;
+; 26                                           ; 2                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 2                            ;
+; 29                                           ; 1                            ;
+; 30                                           ; 1                            ;
 ; 31                                           ; 1                            ;
-; 32                                           ; 2                            ;
+; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.49) ; Number of LABs  (Total = 43) ;
+; Number of Signals Sourced Out  (Average = 7.85) ; Number of LABs  (Total = 46) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 5                            ;
-; 2                                               ; 3                            ;
-; 3                                               ; 0                            ;
+; 1                                               ; 0                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 1                            ;
 ; 4                                               ; 3                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 6                            ;
-; 7                                               ; 1                            ;
-; 8                                               ; 10                           ;
-; 9                                               ; 3                            ;
-; 10                                              ; 2                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 8                            ;
+; 7                                               ; 5                            ;
+; 8                                               ; 11                           ;
+; 9                                               ; 2                            ;
+; 10                                              ; 4                            ;
 ; 11                                              ; 3                            ;
 ; 12                                              ; 1                            ;
-; 13                                              ; 0                            ;
+; 13                                              ; 2                            ;
 ; 14                                              ; 0                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 4                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 2                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 13.14) ; Number of LABs  (Total = 43) ;
+; Number of Distinct Inputs  (Average = 16.04) ; Number of LABs  (Total = 46) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 2                            ;
-; 4                                            ; 2                            ;
-; 5                                            ; 1                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 2                            ;
 ; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 2                            ;
-; 9                                            ; 11                           ;
+; 7                                            ; 1                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 9                            ;
 ; 10                                           ; 1                            ;
-; 11                                           ; 4                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
+; 11                                           ; 2                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 1                            ;
 ; 14                                           ; 2                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 4                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 5                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 5                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 2                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 2                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 1                            ;
-; 28                                           ; 0                            ;
+; 28                                           ; 1                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 1                            ;
-; 31                                           ; 1                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 0                            ;
+; 33                                           ; 0                            ;
+; 34                                           ; 1                            ;
+; 35                                           ; 0                            ;
+; 36                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1406,7 +1409,7 @@ This will disable optimization of problematic paths and expose them for further 
 +--------------------+----------------------------------------------------+-------------------+
 ; Source Register    ; Destination Register                               ; Delay Added in ns ;
 +--------------------+----------------------------------------------------+-------------------+
-; BB_SYSTEM_CLOCK_50 ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP ; 0.648             ;
+; BB_SYSTEM_CLOCK_50 ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP ; 0.215             ;
 +--------------------+----------------------------------------------------+-------------------+
 Note: This table only shows the top 1 path(s) that have the largest delay added for hold.
 
@@ -1467,7 +1470,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "BB_SYSTEM_display_OutBUS[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "BB_SYSTEM_display_OutBUS[8]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "BB_SYSTEM_display_OutBUS[9]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1476,17 +1479,17 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X32_Y11 to location X42_Y22
+    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.68 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.62 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 7 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin BB_SYSTEM_CLOCK_50 uses I/O standard 3.3-V LVTTL at R8 File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 151
@@ -1498,10 +1501,10 @@ Warning (169177): 7 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin BB_SYSTEM_downButton_InLow uses I/O standard 3.3-V LVTTL at D8 File: C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v Line: 157
 Info (144001): Generated suppressed messages file C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 5528 megabytes
-    Info: Processing ended: Wed May 05 15:14:02 2021
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 5525 megabytes
+    Info: Processing ended: Wed May 05 17:27:12 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+
