@@ -5,6 +5,7 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl {C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_SET_FIXED_TRANSITIONS.v}
 vlog -vlog01compat -work work +incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl {C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_COLLISION_DETECTOR.v}
 vlog -vlog01compat -work work +incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl {C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_NESTCHECK.v}
 vlog -vlog01compat -work work +incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl {C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_NIDOS.v}

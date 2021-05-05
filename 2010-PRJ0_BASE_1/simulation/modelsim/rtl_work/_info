@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/simulation/modelsim
 vBB_SYSTEM
-Z1 !s110 1620230411
+Z1 !s110 1620245737
 !i10b 1
-!s100 Oa3hMZdDeWJI1bc]3:8j=2
-I53gPZU8P^`L[ZX;hH<>jb2
+!s100 DQO1cFAhWzD_R0<AR3=9R1
+I]N?MJe1jh9]?FNBD8ogFN0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1620230335
+w1620244548
 8C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v
 FC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v
 Z3 L0 21
@@ -23,7 +23,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1620230411.000000
+Z5 !s108 1620245737.000000
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/BB_SYSTEM.v|
 !i113 1
@@ -32,7 +32,7 @@ Z7 !s92 -vlog01compat -work work +incdir+C:/Users/juans/Desktop/SED-PROY/2010-PR
 Z8 tCvgOpt 0
 n@b@b_@s@y@s@t@e@m
 vCC_BOTTOMSIDECOMPARATOR
-Z9 !s110 1620230410
+Z9 !s110 1620245736
 !i10b 1
 !s100 MjU1Yn;iTX94@TFOlJ7]X3
 Ikz6INVk6kA5]VFmY8kTeU1
@@ -46,7 +46,7 @@ R4
 r1
 !s85 0
 31
-Z11 !s108 1620230410.000000
+Z11 !s108 1620245736.000000
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_BOTTOMSIDECOMPARATOR.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_BOTTOMSIDECOMPARATOR.v|
 !i113 1
@@ -55,7 +55,7 @@ Z12 !s92 -vlog01compat -work work +incdir+C:/Users/juans/Desktop/SED-PROY/2010-P
 R8
 n@c@c_@b@o@t@t@o@m@s@i@d@e@c@o@m@p@a@r@a@t@o@r
 vCC_COLLISION_DETECTOR
-Z13 !s110 1620230409
+R9
 !i10b 1
 !s100 jUi<Xd6WB3gzi4S8j2KGa0
 I4l;=EO8HD4fREXkTZigJh3
@@ -69,7 +69,7 @@ R4
 r1
 !s85 0
 31
-Z14 !s108 1620230409.000000
+R11
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_COLLISION_DETECTOR.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_COLLISION_DETECTOR.v|
 !i113 1
@@ -78,7 +78,7 @@ R12
 R8
 n@c@c_@c@o@l@l@i@s@i@o@n_@d@e@t@e@c@t@o@r
 vCC_NESTCHECK
-R13
+R9
 !i10b 1
 !s100 CH7FJC^=E@cNiVD_FJjga2
 IM5Sj=BG@;hEl_6D1j5_3Y1
@@ -92,7 +92,7 @@ R4
 r1
 !s85 0
 31
-R14
+R11
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_NESTCHECK.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_NESTCHECK.v|
 !i113 1
@@ -100,14 +100,37 @@ R6
 R12
 R8
 n@c@c_@n@e@s@t@c@h@e@c@k
-vCC_SPEEDCOMPARATOR
-R1
+vCC_SET_FIXED_TRANSITIONS
+R9
 !i10b 1
-!s100 kl@DYEF>DWKA?jS7k@Z993
-IOi]kJ=MkY0>JelX2`HlaJ0
+!s100 ?DV;`]Qff[4SGQUgFeA1T0
+II?;i:KJkm76ejf4LYf4Gh1
 R2
 R0
-w1620062226
+w1620233390
+8C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_SET_FIXED_TRANSITIONS.v
+FC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_SET_FIXED_TRANSITIONS.v
+L0 5
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_SET_FIXED_TRANSITIONS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/CC_SET_FIXED_TRANSITIONS.v|
+!i113 1
+R6
+R12
+R8
+n@c@c_@s@e@t_@f@i@x@e@d_@t@r@a@n@s@i@t@i@o@n@s
+vCC_SPEEDCOMPARATOR
+Z13 !s110 1620245738
+!i10b 1
+!s100 VL@H^7KW6^9n13iiL`fj>1
+I2W1ZB79n30hXON9@613062
+R2
+R0
+w1620243787
 8C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v
 FC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v
 R3
@@ -115,7 +138,7 @@ R4
 r1
 !s85 0
 31
-R5
+Z14 !s108 1620245738.000000
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/CC_SPEEDCOMPARATOR.v|
 !i113 1
@@ -169,7 +192,7 @@ R12
 R8
 n@s@c_@d@e@b@o@u@n@c@e1
 vSC_REG_GENERAL_NIDOS
-R13
+R9
 !i10b 1
 !s100 QHKZNETPS]3H]_iD<T^KC2
 IjE:d?Q4YPBjO2M2aBRN^20
@@ -183,7 +206,7 @@ R4
 r1
 !s85 0
 31
-R14
+R11
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_NIDOS.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_NIDOS.v|
 !i113 1
@@ -192,7 +215,7 @@ R12
 R8
 n@s@c_@r@e@g_@g@e@n@e@r@a@l_@n@i@d@o@s
 vSC_REG_GENERAL_NIVEL
-Z16 !s110 1620230412
+R13
 !i10b 1
 !s100 7XbhKXC_AfDk_N86Y@>@o2
 I_PaRW_;@G;AgC?JJLO`:H0
@@ -206,7 +229,7 @@ R4
 r1
 !s85 0
 31
-Z17 !s108 1620230412.000000
+R14
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_NIVEL.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_NIVEL.v|
 !i113 1
@@ -215,7 +238,7 @@ R12
 R8
 n@s@c_@r@e@g_@g@e@n@e@r@a@l_@n@i@v@e@l
 vSC_REG_GENERAL_PERDIO_VIDAS
-R13
+R9
 !i10b 1
 !s100 4RcIc@=M_EHJj4kn4;:UF1
 I[o@GRk;<4`jJ_[`b5XDY;3
@@ -229,7 +252,7 @@ R4
 r1
 !s85 0
 31
-R14
+R11
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_PERDIO_VIDAS.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_REG_GENERAL_PERDIO_VIDAS.v|
 !i113 1
@@ -238,13 +261,13 @@ R12
 R8
 n@s@c_@r@e@g_@g@e@n@e@r@a@l_@p@e@r@d@i@o_@v@i@d@a@s
 vSC_RegBACKGTYPE
-R9
+R1
 !i10b 1
-!s100 ABHzZWbdOaBBGibWLBCR80
-IbQND;d?4AYN`KCnWfV_S82
+!s100 ccLh[HQYbBYVYkVVinUZK2
+In9X8XhDM0fm54_<gdLkkY0
 R2
 R0
-w1620230277
+w1620244641
 8C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_RegBACKGTYPE.v
 FC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_RegBACKGTYPE.v
 R3
@@ -252,7 +275,7 @@ R4
 r1
 !s85 0
 31
-R11
+R5
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_RegBACKGTYPE.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_RegBACKGTYPE.v|
 !i113 1
@@ -263,11 +286,11 @@ n@s@c_@reg@b@a@c@k@g@t@y@p@e
 vSC_RegPOINTTYPE
 R9
 !i10b 1
-!s100 QL6EI::I^Q_YBKVIm^R[U0
-IzKkZbTiVzea^h=?m[V4DG1
+!s100 9o@CNDHBXS_D61;d5ZYL30
+IDWS9BI717@ebSm]IeYLTE3
 R2
 R0
-w1620223507
+w1620241949
 8C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_RegPOINTTYPE.v
 FC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_RegPOINTTYPE.v
 R3
@@ -286,11 +309,11 @@ n@s@c_@reg@p@o@i@n@t@t@y@p@e
 vSC_STATEMACHINE_MAIN
 R1
 !i10b 1
-!s100 fMzMj]CNM0FD<Pi<:NB[_3
-Id68AbilK7WZXOf36Z;m<B2
+!s100 6SgRnhz0N0zCbaKfBccZ43
+ImT6Ud8KIcj0=d@0Mc]zHh2
 R2
 R0
-w1620062229
+w1620241876
 8C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE_MAIN.v
 FC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE_MAIN.v
 R3
@@ -298,7 +321,7 @@ R4
 r1
 !s85 0
 31
-R11
+R5
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE_MAIN.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_STATEMACHINE_MAIN.v|
 !i113 1
@@ -307,7 +330,7 @@ R12
 R8
 n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e_@m@a@i@n
 vSC_STATEMACHINEBACKG
-R9
+R1
 !i10b 1
 !s100 O?0LU`BRMnz?6;Xej_?4_3
 ITKGiNACE0=@6h92JnLL=O0
@@ -353,7 +376,7 @@ R12
 R8
 n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e@p@o@i@n@t
 vSC_upSPEEDCOUNTER
-R1
+R13
 !i10b 1
 !s100 g83DdnK9_iT1=VjEknK4J1
 IM022[`lF8BBA?>]2iW]CN3
@@ -367,7 +390,7 @@ R4
 r1
 !s85 0
 31
-R5
+R14
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_upSPEEDCOUNTER.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/rtl/SC_upSPEEDCOUNTER.v|
 !i113 1
@@ -398,13 +421,13 @@ R6
 R12
 R8
 vTB_SYSTEM
-R16
+R13
 !i10b 1
 !s100 D_USjZ5RZm3CaD6H0UUQQ1
 IUc^SQg9il5AzV6l3oJ@7l2
 R2
 R0
-w1620167222
+w1620245589
 8C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/simulation/modelsim/TB_SYSTEM.vt
 FC:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/simulation/modelsim/TB_SYSTEM.vt
 L0 19
@@ -412,7 +435,7 @@ R4
 r1
 !s85 0
 31
-R17
+R14
 !s107 C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/simulation/modelsim/TB_SYSTEM.vt|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/simulation/modelsim|C:/Users/juans/Desktop/SED-PROY/2010-PRJ0_BASE_1/simulation/modelsim/TB_SYSTEM.vt|
 !i113 1

@@ -34,7 +34,8 @@ module SC_RegPOINTTYPE #(parameter RegPOINTTYPE_DATAWIDTH=8, parameter DATA_FIXE
 	SC_RegPOINTTYPE_transition_InBUS,
 	SC_RegPOINTTYPE_transitionDATA_InBUS,
 	SC_RegPOINTTYPE_collision_InLow,
-	SC_RegPOINTTYPE_nest_reached_InLow
+	SC_RegPOINTTYPE_nest_reached_InLow,
+	SC_RegPOINTTYPE_frog_reset_InLow
 );
 //=======================================================
 //  PARAMETER declarations
@@ -43,7 +44,7 @@ module SC_RegPOINTTYPE #(parameter RegPOINTTYPE_DATAWIDTH=8, parameter DATA_FIXE
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[RegPOINTTYPE_DATAWIDTH-1:0]	SC_RegPOINTTYPE_data_OutBUS;
+output	[RegPOINTTYPE_DATAWIDTH-1:0]	SC_RegPOINTTYPE_data_OutBUS;
 input		SC_RegPOINTTYPE_CLOCK_50;
 input		SC_RegPOINTTYPE_RESET_InHigh;
 input		SC_RegPOINTTYPE_clear_InLow;
@@ -56,6 +57,7 @@ input		[8-1:0] SC_RegPOINTTYPE_transitionDATA_InBUS;
 input		SC_RegPOINTTYPE_transition_InBUS;	
 input 	SC_RegPOINTTYPE_collision_InLow;
 input 	SC_RegPOINTTYPE_nest_reached_InLow;
+input    SC_RegPOINTTYPE_frog_reset_InLow;
 
 //=======================================================
 //  REG/WIRE declarations
@@ -70,6 +72,10 @@ always @(*)
 begin
 	if (SC_RegPOINTTYPE_clear_InLow == 1'b0 || SC_RegPOINTTYPE_collision_InLow == 1'b0 || SC_RegPOINTTYPE_nest_reached_InLow == 1'b0)
 		RegPOINTTYPE_Signal = DATA_FIXED_INITREGPOINT;
+		
+	else if ( SC_RegPOINTTYPE_frog_reset_InLow == 1'b0)
+		RegPOINTTYPE_Signal = DATA_FIXED_INITREGPOINT;
+		
 	else if (SC_RegPOINTTYPE_transition_InBUS != 3'b000)
 		RegPOINTTYPE_Signal = SC_RegPOINTTYPE_transitionDATA_InBUS;
 	else if (SC_RegPOINTTYPE_load0_InLow == 1'b0)
@@ -87,7 +93,7 @@ begin
 always @(posedge SC_RegPOINTTYPE_CLOCK_50, posedge SC_RegPOINTTYPE_RESET_InHigh)
 begin
 	if (SC_RegPOINTTYPE_RESET_InHigh == 1'b1)
-		RegPOINTTYPE_Register <= 0;
+		RegPOINTTYPE_Register <= 8'b00000000;
 	else
 		RegPOINTTYPE_Register <= RegPOINTTYPE_Signal;
 end

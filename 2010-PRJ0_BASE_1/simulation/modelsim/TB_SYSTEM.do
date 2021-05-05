@@ -4,6 +4,10 @@ quietly WaveActivateNextPane {} 0
 delete wave *
 add wave -noupdate /TB_SYSTEM/eachvec
 
+add wave -divider STATE_MACHINE
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_STATEMACHINE_MAIN_u0/STATE_Register
+
+
 add wave  -divider LedMATRIX
 add wave -noupdate /TB_SYSTEM/TB_SYSTEM_CLOCK_50
 add wave -noupdate /TB_SYSTEM/TB_SYSTEM_RESET_InHigh
@@ -11,26 +15,48 @@ add wave -noupdate /TB_SYSTEM/TB_SYSTEM_startButton_InLow
 add wave -noupdate /TB_SYSTEM/TB_SYSTEM_leftButton_InLow
 add wave -noupdate /TB_SYSTEM/TB_SYSTEM_rightButton_InLow
 
-add wave -noupdate /TB_SYSTEM/TB_SYSTEM_max7219DIN_Out
-add wave -noupdate /TB_SYSTEM/TB_SYSTEM_max7219NCS_Out
-add wave -noupdate /TB_SYSTEM/TB_SYSTEM_max7219CLK_Out
 
-add wave  -divider SC_DEBOUNCE1_u0
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_DEBOUNCE1_u0/SC_DEBOUNCE1_button_In
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_DEBOUNCE1_u0/SC_DEBOUNCE1_button_Out
 
-add wave  -divider SC_DEBOUNCE1_u1
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_DEBOUNCE1_u1/SC_DEBOUNCE1_button_In
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_DEBOUNCE1_u1/SC_DEBOUNCE1_button_Out
+add wave -divider DISPLAY
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data7_wire
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data6_wire
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data5_wire
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data4_wire
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data3_wire
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data2_wire
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data1_wire
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/regGAME_data0_wire
 
-add wave  -divider SC_DEBOUNCE1_u2
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_DEBOUNCE1_u2/SC_DEBOUNCE1_button_In
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_DEBOUNCE1_u2/SC_DEBOUNCE1_button_Out
 
-add wave  -divider TEST
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/matrix_ctrl_unit_0/clk_driver
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/matrix_ctrl_unit_0/Trig_SignalNEG
-add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/matrix_ctrl_unit_0/Trig_SignalPOS
+add wave -divider TIME
+
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/SC_upSPEEDCOUNTER_u0/upSPEEDCOUNTER_Register
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/CC_SPEEDCOMPARATOR_u0/CC_SPEEDCOMPARATOR_T0_OutLow
+
+
+add wave -divider POINT
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data7_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data6_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data5_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data4_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data3_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data2_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data1_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegPOINTTYPE_2_POINTMATRIX_data0_Out
+
+add wave -divider BACK
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data7_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data6_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data5_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data4_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data3_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data2_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data1_Out
+add wave -noupdate /TB_SYSTEM/BB_SYSTEM_u0/RegBACKGTYPE_2_BACKGMATRIX_data0_Out
+
+
+
+
 
 restart
 run 500ms

@@ -18,7 +18,25 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8, parameter DATA_FIXED_INITREGBACKG=8'b00000000, parameter FIRST_ROW_Low = 1'b1)(
+module SC_RegBACKGTYPE #(
+
+parameter RegBACKGTYPE_DATAWIDTH=8, 
+
+parameter DATA_FIXED_INITREGBACKG=8'b00000000, 
+
+parameter FIRST_ROW_Low = 1'b1,
+
+parameter DATA_FIXED_NIVEL_1 = 8'b00000000,
+
+parameter DATA_FIXED_NIVEL_2 = 8'b00000000,
+
+parameter DATA_FIXED_NIVEL_3 = 8'b00000000,
+
+parameter DATA_FIXED_NIVEL_4 = 8'b00000000
+
+
+
+)(
 	//////////// OUTPUTS //////////
 	SC_RegBACKGTYPE_data_OutBUS,
 	//////////// INPUTS //////////
@@ -73,9 +91,23 @@ begin
 		
 	else if (FIRST_ROW_Low == 1'b0 && SC_RegBACKTYPE_NESTCHECK_right_InLow == 1'b0)
 		RegBACKGTYPE_Signal = 8'b11011111;
+		
 	
+	else if(FIRST_ROW_Low == 1'b0 )
+		RegBACKGTYPE_Signal = 8'b11011011;
+		
+		
+
 	else if (SC_RegBACKTYPE_transition_InBUS != 3'b000)
 		RegBACKGTYPE_Signal = SC_RegBACKTYPE_transitionDATA_InBUS;
+		
+		
+	//######################################################//
+	
+	
+	
+	//######################################################//
+		
 	else if (SC_RegBACKGTYPE_load_InLow == 1'b0)
 		RegBACKGTYPE_Signal = SC_RegBACKGTYPE_data_InBUS;
 	else if (SC_RegBACKGTYPE_shiftselection_In == 2'b01)

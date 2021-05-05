@@ -31,7 +31,8 @@ module SC_STATEMACHINE_MAIN (
 	SC_STATEMACHINE_MAIN_RESET_InHigh,
 	SC_STATEMACHINE_MAIN_startButton_InLow,
 	SC_STATEMACHINE_MAIN_nidosCompletos_InLow,
-	SC_STATEMACHINE_MAIN_PerdioVidas_InLow
+	SC_STATEMACHINE_MAIN_PerdioVidas_InLow,
+	SC_STATEMACHINE_MAIN_reset_frog_OutLow
 
 );	
 //=======================================================
@@ -53,6 +54,10 @@ localparam ESTADO_CAMBIO_NIVEL_4							= 11;
 localparam NIVEL_4                                 = 12;
 localparam ESTADO_FINAL                            = 13;
 
+localparam FROG_RESET_1 									= 14;
+localparam FROG_RESET_2 									= 15;
+localparam FROG_RESET_3 									= 16;
+localparam FROG_RESET_4 									= 17;
 
 //=======================================================
 //  PORT declarations
@@ -61,7 +66,7 @@ output reg		SC_STATEMACHINE_MAIN_clear_OutLow;
 output reg		SC_STATEMACHINE_MAIN_load_OutLow;
 output reg		SC_STATEMACHINE_MAIN_changeLevel_OutLow;
 output reg	[3-1:0]SC_STATEMACHINE_MAIN_transition_OutBUS;
-
+output reg     SC_STATEMACHINE_MAIN_reset_frog_OutLow;
 
 
 
@@ -74,8 +79,8 @@ input 		SC_STATEMACHINE_MAIN_PerdioVidas_InLow;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [3:0] STATE_Register;
-reg [3:0] STATE_Signal;
+reg [4:0] STATE_Register;
+reg [4:0] STATE_Signal;
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -91,7 +96,9 @@ begin
 						
 		STATE_INIT_0:	STATE_Signal = ESTADO_CAMBIO_NIVEL_1;
 		
-		ESTADO_CAMBIO_NIVEL_1: STATE_Signal = NIVEL_1;
+		ESTADO_CAMBIO_NIVEL_1: STATE_Signal = FROG_RESET_1;
+		
+		FROG_RESET_1: STATE_Signal = NIVEL_1;
 		
 		NIVEL_1: if (SC_STATEMACHINE_MAIN_nidosCompletos_InLow == 1'b0) STATE_Signal = ESTADO_CAMBIO_NIVEL_2;
 		
@@ -100,8 +107,9 @@ begin
 					else STATE_Signal = NIVEL_1;
 					
 					
-		ESTADO_CAMBIO_NIVEL_2: STATE_Signal = NIVEL_2;
+		ESTADO_CAMBIO_NIVEL_2: STATE_Signal = FROG_RESET_2;
 		
+		FROG_RESET_2: STATE_Signal = NIVEL_2;
 		
 		
 		NIVEL_2: if (SC_STATEMACHINE_MAIN_nidosCompletos_InLow == 1'b0) STATE_Signal = ESTADO_CAMBIO_NIVEL_3;
@@ -113,7 +121,9 @@ begin
 				
 					
 
-		ESTADO_CAMBIO_NIVEL_3: STATE_Signal = NIVEL_3;
+		ESTADO_CAMBIO_NIVEL_3: STATE_Signal = FROG_RESET_3;
+		
+		FROG_RESET_3: STATE_Signal = NIVEL_3;
 		
 		
 		
@@ -125,7 +135,9 @@ begin
 					
 					
 		
-		ESTADO_CAMBIO_NIVEL_4: STATE_Signal = NIVEL_4;
+		ESTADO_CAMBIO_NIVEL_4: STATE_Signal = FROG_RESET_4;
+		
+		FROG_RESET_4: STATE_Signal = NIVEL_4;
 		
 		NIVEL_4: if (SC_STATEMACHINE_MAIN_nidosCompletos_InLow == 1'b0) STATE_Signal = ESTADO_FINAL;
 		
@@ -167,6 +179,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 //=========================================================
 // STATE_START
@@ -177,6 +190,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b0;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS= 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 //=========================================================
 // STATE_CHECK
@@ -187,6 +201,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 //=========================================================
 // STATE_CHECK
@@ -197,6 +212,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 //=========================================================
 // ESTADO_INICIAL
@@ -208,6 +224,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 
 
@@ -221,6 +238,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b001;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 
 		end
 		
@@ -233,6 +251,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 			
 		end
 
@@ -246,6 +265,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b0;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b010;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 
 		end		
 		
@@ -257,6 +277,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 
 //=========================================================
@@ -269,6 +290,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b0;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b011;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 
 		end		
 		
@@ -280,6 +302,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 
 //=========================================================
@@ -292,6 +315,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b0;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b100;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 
 		end		
 		
@@ -303,6 +327,7 @@ begin
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 			
 //=========================================================
@@ -316,8 +341,57 @@ ESTADO_FINAL:
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b0;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b101;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 	end
-		
+	
+//=========================================================
+// ESTADO FROG_RESET
+//=========================================================
+
+FROG_RESET_1:
+
+	begin
+			SC_STATEMACHINE_MAIN_clear_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b0;
+	end
+	
+FROG_RESET_2:
+
+	begin
+			SC_STATEMACHINE_MAIN_clear_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b0;
+	end
+	
+	
+	
+FROG_RESET_3:
+
+	begin
+			SC_STATEMACHINE_MAIN_clear_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b0;
+	end
+	
+	
+	
+FROG_RESET_4:
+
+	begin
+			SC_STATEMACHINE_MAIN_clear_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
+			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b0;
+			SC_STATEMACHINE_MAIN_transition_OutBUS = 3'b000;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b0;
+	end
+	
 //=========================================================
 // DEFAULT
 //=========================================================
@@ -327,6 +401,7 @@ ESTADO_FINAL:
 			SC_STATEMACHINE_MAIN_load_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_changeLevel_OutLow = 1'b1;
 			SC_STATEMACHINE_MAIN_transition_OutBUS = 2'b00;
+			SC_STATEMACHINE_MAIN_reset_frog_OutLow = 1'b1;
 		end
 	endcase
 end
